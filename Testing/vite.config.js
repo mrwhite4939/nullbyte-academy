@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 // base must match the repository name
 export default defineConfig({
   plugins: [react()],
-  base: '/Course-NullByte/',
+  base: '/nullbyte-academy/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',

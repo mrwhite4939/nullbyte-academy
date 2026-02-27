@@ -16,10 +16,9 @@
     "@vitejs/plugin-react": "^4.3.1",
     "vite": "^5.4.1"
   },
-  "description": "NullByte Academy \u2014 Interactive testing app for cybersecurity curriculum",
+  "description": "NullByte Academy — Interactive testing app for cybersecurity curriculum",
   "author": "NullByte Academy <mrwhite4939@gmail.com>",
   "license": "MIT",
-  "homepage": ".",
   "keywords": [
     "cybersecurity",
     "education",

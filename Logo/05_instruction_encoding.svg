@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="900" height="540">
+<rect width="900" height="540" fill="#070010"/>
+<text x="450" y="36" text-anchor="middle" font-family="monospace" font-size="17" font-weight="bold" fill="#00FFFF" letter-spacing="4">x86-64 INSTRUCTION ENCODING</text>
+<text x="450" y="57" text-anchor="middle" font-family="monospace" font-size="10" fill="#3A2060" letter-spacing="3">Variable-length format: 1 to 15 bytes maximum  ·  NullByte Academy</text>
+
+<!-- Format header boxes -->
+<text x="450" y="80" text-anchor="middle" font-family="monospace" font-size="10" fill="#4A20A0" letter-spacing="2">COMPLETE INSTRUCTION FORMAT:</text>
+<rect x="18"  y="90" width="100" height="52" rx="4" fill="#1A0035" stroke="#BF5FFF" stroke-width="2"/>
+<text x="68"  y="112" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#BF5FFF">PREFIX</text>
+<text x="68"  y="128" text-anchor="middle" font-family="monospace" font-size="9" fill="#7040A0">0–4 bytes</text>
+<text x="68"  y="140" text-anchor="middle" font-family="monospace" font-size="8" fill="#4A2070">LOCK,REP…</text>
+
+<rect x="124" y="90" width="110" height="52" rx="4" fill="#001830" stroke="#00AACC" stroke-width="2"/>
+<text x="179" y="112" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#00FFFF">REX</text>
+<text x="179" y="128" text-anchor="middle" font-family="monospace" font-size="9" fill="#006880">0–1 byte</text>
+<text x="179" y="140" text-anchor="middle" font-family="monospace" font-size="8" fill="#004060">0100 W R X B</text>
+
+<rect x="240" y="90" width="120" height="52" rx="4" fill="#001A0D" stroke="#00FF88" stroke-width="2"/>
+<text x="300" y="112" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#00FF88">OPCODE</text>
+<text x="300" y="128" text-anchor="middle" font-family="monospace" font-size="9" fill="#006030">1–3 bytes</text>
+<text x="300" y="140" text-anchor="middle" font-family="monospace" font-size="8" fill="#004020">0x55,0x89,0xC3</text>
+
+<rect x="366" y="90" width="120" height="52" rx="4" fill="#1A0800" stroke="#FFB800" stroke-width="2"/>
+<text x="426" y="112" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#FFB800">ModR/M</text>
+<text x="426" y="128" text-anchor="middle" font-family="monospace" font-size="9" fill="#886000">0–1 byte</text>
+<text x="426" y="140" text-anchor="middle" font-family="monospace" font-size="8" fill="#604000">[mod|reg|r/m]</text>
+
+<rect x="492" y="90" width="100" height="52" rx="4" fill="#120800" stroke="#CC8800" stroke-width="1.5"/>
+<text x="542" y="112" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#CC8800">SIB</text>
+<text x="542" y="128" text-anchor="middle" font-family="monospace" font-size="9" fill="#664400">0–1 byte</text>
+<text x="542" y="140" text-anchor="middle" font-family="monospace" font-size="8" fill="#442200">[sc|idx|base]</text>
+
+<rect x="598" y="90" width="130" height="52" rx="4" fill="#0A001A" stroke="#6644AA" stroke-width="1.5"/>
+<text x="663" y="112" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#8866CC">DISPLACEMENT</text>
+<text x="663" y="128" text-anchor="middle" font-family="monospace" font-size="9" fill="#443388">0,1,2,4 bytes</text>
+<text x="663" y="140" text-anchor="middle" font-family="monospace" font-size="8" fill="#332266">mem offset</text>
+
+<rect x="734" y="90" width="148" height="52" rx="4" fill="#0A001A" stroke="#4433AA" stroke-width="1.5"/>
+<text x="808" y="112" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#6655BB">IMMEDIATE</text>
+<text x="808" y="128" text-anchor="middle" font-family="monospace" font-size="9" fill="#332288">0,1,2,4,8 bytes</text>
+<text x="808" y="140" text-anchor="middle" font-family="monospace" font-size="8" fill="#221166">constant value</text>
+
+<!-- REX breakdown panel -->
+<rect x="18" y="158" width="415" height="130" rx="6" fill="#0A0018" stroke="#00AACC" stroke-width="1.5"/>
+<text x="226" y="177" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#00FFFF">REX PREFIX ANATOMY</text>
+<text x="226" y="195" text-anchor="middle" font-family="monospace" font-size="10" fill="#3A2060">Byte range 0x40–0x4F  =  0100 W R X B</text>
+<rect x="40"  y="204" width="70" height="36" rx="3" fill="#001A0D" stroke="#00FF88"/>
+<text x="75"  y="220" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#00FF88">W</text>
+<text x="75"  y="234" text-anchor="middle" font-family="monospace" font-size="9" fill="#006030">64-bit ops</text>
+<rect x="120" y="204" width="70" height="36" rx="3" fill="#001020" stroke="#00AACC"/>
+<text x="155" y="220" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#00FFFF">R</text>
+<text x="155" y="234" text-anchor="middle" font-family="monospace" font-size="9" fill="#004060">ext reg field</text>
+<rect x="200" y="204" width="70" height="36" rx="3" fill="#0A0020" stroke="#6644AA"/>
+<text x="235" y="220" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#8866CC">X</text>
+<text x="235" y="234" text-anchor="middle" font-family="monospace" font-size="9" fill="#443388">ext SIB idx</text>
+<rect x="280" y="204" width="70" height="36" rx="3" fill="#1A0030" stroke="#BF5FFF"/>
+<text x="315" y="220" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#BF5FFF">B</text>
+<text x="315" y="234" text-anchor="middle" font-family="monospace" font-size="9" fill="#6030A0">ext r/m,base</text>
+<text x="226" y="275" text-anchor="middle" font-family="monospace" font-size="10" fill="#4A3080">0x48 = 01001000 → W=1 → 64-bit operand size</text>
+
+<!-- ModR/M panel -->
+<rect x="445" y="158" width="437" height="130" rx="6" fill="#0A0018" stroke="#FFB800" stroke-width="1.5"/>
+<text x="664" y="177" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#FFB800">ModR/M BYTE BREAKDOWN</text>
+<text x="664" y="195" text-anchor="middle" font-family="monospace" font-size="10" fill="#3A2060">[ mod:2 bits | reg:3 bits | r/m:3 bits ]</text>
+<rect x="468" y="204" width="100" height="36" rx="3" fill="#1A0800" stroke="#FFB800"/>
+<text x="518" y="220" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#FFB800">mod</text>
+<text x="518" y="234" text-anchor="middle" font-family="monospace" font-size="9" fill="#664400">00=mem 11=reg</text>
+<rect x="578" y="204" width="100" height="36" rx="3" fill="#0A0800" stroke="#CC8800"/>
+<text x="628" y="220" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#CC8800">reg</text>
+<text x="628" y="234" text-anchor="middle" font-family="monospace" font-size="9" fill="#664400">source reg / ext</text>
+<rect x="688" y="204" width="100" height="36" rx="3" fill="#080600" stroke="#AA6600"/>
+<text x="738" y="220" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#AA6600">r/m</text>
+<text x="738" y="234" text-anchor="middle" font-family="monospace" font-size="9" fill="#664400">dest reg / mem</text>
+<text x="518" y="262" text-anchor="middle" font-family="monospace" font-size="9" fill="#664400">mod=00: [reg]</text>
+<text x="628" y="262" text-anchor="middle" font-family="monospace" font-size="9" fill="#664400">mod=01: [reg+d8]</text>
+<text x="738" y="262" text-anchor="middle" font-family="monospace" font-size="9" fill="#664400">mod=10: [reg+d32]</text>
+<text x="518" y="277" text-anchor="middle" font-family="monospace" font-size="9" fill="#886000">mod=11 → register operand (no memory)</text>
+
+<!-- Decode example -->
+<rect x="18" y="300" width="864" height="228" rx="6" fill="#0A0018" stroke="#1A0040"/>
+<text x="450" y="320" text-anchor="middle" font-family="monospace" font-size="11" fill="#4A20A0" letter-spacing="3">DECODE WALKTHROUGH — Standard Function Prologue</text>
+<line x1="28" y1="328" x2="872" y2="328" stroke="#1A0040"/>
+
+<!-- Instruction 1: PUSH RBP -->
+<text x="40"  y="348" font-family="monospace" font-size="10" fill="#4A20A0">Instruction 1:</text>
+<rect x="40"  y="356" width="60" height="28" rx="3" fill="#001A0D" stroke="#00FF88"/>
+<text x="70"  y="374" text-anchor="middle" font-family="monospace" font-size="12" fill="#00FF88">0x55</text>
+<text x="115" y="374" font-family="monospace" font-size="10" fill="#4A3060">→</text>
+<rect x="130" y="356" width="200" height="28" rx="3" fill="#0A0018" stroke="#4A20A0"/>
+<text x="230" y="374" text-anchor="middle" font-family="monospace" font-size="12" fill="#C8D4E8">PUSH RBP</text>
+<text x="345" y="374" font-family="monospace" font-size="10" fill="#4A3080">RSP -= 8; [RSP] = RBP; no REX needed (RBP in base register set)</text>
+
+<!-- Instruction 2: MOV RBP, RSP -->
+<text x="40"  y="402" font-family="monospace" font-size="10" fill="#4A20A0">Instruction 2:</text>
+<rect x="40"  y="410" width="60" height="28" rx="3" fill="#001830" stroke="#00AACC"/>
+<text x="70"  y="428" text-anchor="middle" font-family="monospace" font-size="12" fill="#00FFFF">0x48</text>
+<rect x="106" y="410" width="60" height="28" rx="3" fill="#0A0800" stroke="#CC8800"/>
+<text x="136" y="428" text-anchor="middle" font-family="monospace" font-size="12" fill="#CC8800">0x89</text>
+<rect x="172" y="410" width="60" height="28" rx="3" fill="#1A0800" stroke="#FFB800"/>
+<text x="202" y="428" text-anchor="middle" font-family="monospace" font-size="12" fill="#FFB800">0xE5</text>
+<text x="245" y="428" font-family="monospace" font-size="10" fill="#4A3060">→</text>
+<rect x="260" y="410" width="200" height="28" rx="3" fill="#0A0018" stroke="#4A20A0"/>
+<text x="360" y="428" text-anchor="middle" font-family="monospace" font-size="12" fill="#C8D4E8">MOV RBP, RSP</text>
+<text x="475" y="428" font-family="monospace" font-size="10" fill="#4A3080">REX.W=1 (64-bit); opcode 89=MOV r/m,r; E5=11|100|101 mod=reg,RSP→RBP</text>
+
+<!-- Instruction 3: SUB RSP -->
+<text x="40"  y="458" font-family="monospace" font-size="10" fill="#4A20A0">Instruction 3:</text>
+<rect x="40"  y="466" width="60" height="28" rx="3" fill="#001830" stroke="#00AACC"/>
+<text x="70"  y="484" text-anchor="middle" font-family="monospace" font-size="12" fill="#00FFFF">0x48</text>
+<rect x="106" y="466" width="60" height="28" rx="3" fill="#0A0800" stroke="#CC8800"/>
+<text x="136" y="484" text-anchor="middle" font-family="monospace" font-size="12" fill="#CC8800">0x83</text>
+<rect x="172" y="466" width="60" height="28" rx="3" fill="#1A0800" stroke="#FFB800"/>
+<text x="202" y="484" text-anchor="middle" font-family="monospace" font-size="12" fill="#FFB800">0xEC</text>
+<rect x="238" y="466" width="60" height="28" rx="3" fill="#0A001A" stroke="#6644AA"/>
+<text x="268" y="484" text-anchor="middle" font-family="monospace" font-size="12" fill="#8866CC">0x40</text>
+<text x="312" y="484" font-family="monospace" font-size="10" fill="#4A3060">→</text>
+<rect x="326" y="466" width="220" height="28" rx="3" fill="#0A0018" stroke="#4A20A0"/>
+<text x="436" y="484" text-anchor="middle" font-family="monospace" font-size="12" fill="#C8D4E8">SUB RSP, 0x40</text>
+<text x="562" y="484" font-family="monospace" font-size="10" fill="#4A3080">Allocates 64 bytes for locals; 0x40 is imm8; EC=ModRM for RSP</text>
+
+<!-- Opcode table -->
+<text x="40" y="514" font-family="monospace" font-size="10" fill="#4A20A0">Common opcodes:</text>
+<text x="180" y="514" font-family="monospace" font-size="10" fill="#00FF88">0x55=PUSH RBP</text>
+<text x="340" y="514" font-family="monospace" font-size="10" fill="#BF5FFF">0xC3=RET</text>
+<text x="460" y="514" font-family="monospace" font-size="10" fill="#00FFFF">0x90=NOP</text>
+<text x="570" y="514" font-family="monospace" font-size="10" fill="#FFB800">0xCC=INT3 (breakpoint)</text>
+<text x="760" y="514" font-family="monospace" font-size="10" fill="#FF6B6B">0xE8=CALL rel32</text>
+</svg>

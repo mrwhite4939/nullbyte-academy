@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="420" viewBox="0 0 500 420">
+  <rect width="500" height="420" fill="#0D0D0D"/>
+  <text x="250" y="35" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#00FF41" text-anchor="middle">x86-64 REGISTER MAP</text>
+
+  <!-- Headers -->
+  <text x="80" y="65" font-family="Courier New, monospace" font-size="11" fill="#FFA500" text-anchor="middle">64-bit</text>
+  <text x="170" y="65" font-family="Courier New, monospace" font-size="11" fill="#FFA500" text-anchor="middle">32-bit</text>
+  <text x="240" y="65" font-family="Courier New, monospace" font-size="11" fill="#FFA500" text-anchor="middle">16-bit</text>
+  <text x="310" y="65" font-family="Courier New, monospace" font-size="11" fill="#FFA500" text-anchor="middle">8-bit</text>
+  <text x="420" y="65" font-family="Courier New, monospace" font-size="11" fill="#FFA500" text-anchor="middle">Purpose</text>
+
+  <!-- Register rows -->
+  <!-- RAX -->
+  <rect x="20" y="72" width="460" height="28" fill="#1A2A1A" stroke="#00FF41" stroke-width="0.5"/>
+  <text x="80" y="91" font-family="Courier New, monospace" font-size="13" fill="#00FF41" text-anchor="middle">RAX</text>
+  <text x="170" y="91" font-family="Courier New, monospace" font-size="13" fill="#00FF41" text-anchor="middle">EAX</text>
+  <text x="240" y="91" font-family="Courier New, monospace" font-size="13" fill="#00FF41" text-anchor="middle">AX</text>
+  <text x="310" y="91" font-family="Courier New, monospace" font-size="13" fill="#00FF41" text-anchor="middle">AL/AH</text>
+  <text x="420" y="91" font-family="Courier New, monospace" font-size="11" fill="#F0F0F0" text-anchor="middle">Accumulator / retval</text>
+
+  <rect x="20" y="100" width="460" height="28" fill="#1A1A1A" stroke="#00FF41" stroke-width="0.5"/>
+  <text x="80" y="119" font-family="Courier New, monospace" font-size="13" fill="#00FF41" text-anchor="middle">RBX</text>
+  <text x="170" y="119" font-family="Courier New, monospace" font-size="13" fill="#00FF41" text-anchor="middle">EBX</text>
+  <text x="240" y="119" font-family="Courier New, monospace" font-size="13" fill="#00FF41" text-anchor="middle">BX</text>
+  <text x="310" y="119" font-family="Courier New, monospace" font-size="13" fill="#00FF41" text-anchor="middle">BL/BH</text>
+  <text x="420" y="119" font-family="Courier New, monospace" font-size="11" fill="#F0F0F0" text-anchor="middle">Base (callee-saved)</text>
+
+  <rect x="20" y="128" width="460" height="28" fill="#1A2A1A" stroke="#00FF41" stroke-width="0.5"/>
+  <text x="80" y="147" font-family="Courier New, monospace" font-size="13" fill="#00FF41" text-anchor="middle">RCX</text>
+  <text x="170" y="147" font-family="Courier New, monospace" font-size="13" fill="#00FF41" text-anchor="middle">ECX</text>
+  <text x="240" y="147" font-family="Courier New, monospace" font-size="13" fill="#00FF41" text-anchor="middle">CX</text>
+  <text x="310" y="147" font-family="Courier New, monospace" font-size="13" fill="#00FF41" text-anchor="middle">CL/CH</text>
+  <text x="420" y="147" font-family="Courier New, monospace" font-size="11" fill="#F0F0F0" text-anchor="middle">Counter / arg 4</text>
+
+  <rect x="20" y="156" width="460" height="28" fill="#1A1A1A" stroke="#00FF41" stroke-width="0.5"/>
+  <text x="80" y="175" font-family="Courier New, monospace" font-size="13" fill="#00FF41" text-anchor="middle">RDX</text>
+  <text x="170" y="175" font-family="Courier New, monospace" font-size="13" fill="#00FF41" text-anchor="middle">EDX</text>
+  <text x="240" y="175" font-family="Courier New, monospace" font-size="13" fill="#00FF41" text-anchor="middle">DX</text>
+  <text x="310" y="175" font-family="Courier New, monospace" font-size="13" fill="#00FF41" text-anchor="middle">DL/DH</text>
+  <text x="420" y="175" font-family="Courier New, monospace" font-size="11" fill="#F0F0F0" text-anchor="middle">Data / arg 3</text>
+
+  <!-- Special registers -->
+  <rect x="20" y="200" width="460" height="28" fill="#1A2A2A" stroke="#00BFFF" stroke-width="1"/>
+  <text x="80" y="219" font-family="Courier New, monospace" font-size="13" fill="#00BFFF" text-anchor="middle">RSP</text>
+  <text x="170" y="219" font-family="Courier New, monospace" font-size="13" fill="#00BFFF" text-anchor="middle">ESP</text>
+  <text x="240" y="219" font-family="Courier New, monospace" font-size="13" fill="#00BFFF" text-anchor="middle">SP</text>
+  <text x="310" y="219" font-family="Courier New, monospace" font-size="13" fill="#00BFFF" text-anchor="middle">SPL</text>
+  <text x="420" y="219" font-family="Courier New, monospace" font-size="11" fill="#F0F0F0" text-anchor="middle">Stack pointer</text>
+
+  <rect x="20" y="228" width="460" height="28" fill="#1A2A2A" stroke="#00BFFF" stroke-width="1"/>
+  <text x="80" y="247" font-family="Courier New, monospace" font-size="13" fill="#00BFFF" text-anchor="middle">RBP</text>
+  <text x="170" y="247" font-family="Courier New, monospace" font-size="13" fill="#00BFFF" text-anchor="middle">EBP</text>
+  <text x="240" y="247" font-family="Courier New, monospace" font-size="13" fill="#00BFFF" text-anchor="middle">BP</text>
+  <text x="310" y="247" font-family="Courier New, monospace" font-size="13" fill="#00BFFF" text-anchor="middle">BPL</text>
+  <text x="420" y="247" font-family="Courier New, monospace" font-size="11" fill="#F0F0F0" text-anchor="middle">Frame pointer</text>
+
+  <rect x="20" y="256" width="460" height="28" fill="#2A1A2A" stroke="#FFA500" stroke-width="1.5"/>
+  <text x="80" y="275" font-family="Courier New, monospace" font-size="13" fill="#FFA500" text-anchor="middle">RIP</text>
+  <text x="170" y="275" font-family="Courier New, monospace" font-size="13" fill="#FFA500" text-anchor="middle">EIP</text>
+  <text x="240" y="275" font-family="Courier New, monospace" font-size="13" fill="#FFA500" text-anchor="middle">IP</text>
+  <text x="310" y="275" font-family="Courier New, monospace" font-size="13" fill="#FFA500" text-anchor="middle">—</text>
+  <text x="420" y="275" font-family="Courier New, monospace" font-size="11" fill="#F0F0F0" text-anchor="middle">Instruction pointer</text>
+
+  <text x="250" y="395" font-family="Courier New, monospace" font-size="11" fill="#00FF41" text-anchor="middle" opacity="0.6">NullByte Academy — M01: CPU Architecture</text>
+</svg>

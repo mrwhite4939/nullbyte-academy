@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" width="860" height="520">
+<rect width="860" height="520" fill="#070010"/>
+<text x="430" y="36" text-anchor="middle" font-family="monospace" font-size="17" font-weight="bold" fill="#00FFFF" letter-spacing="4">REVERSE ENGINEERING WORKFLOW</text>
+<text x="430" y="57" text-anchor="middle" font-family="monospace" font-size="10" fill="#3A2060" letter-spacing="3">Static + Dynamic Analysis Pipeline  ·  NullByte Academy</text>
+
+<defs>
+  <marker id="ra" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0,10 3.5,0 7" fill="#4A20A0"/>
+  </marker>
+</defs>
+
+<!-- Phase boxes: 4 across, y=72 -->
+<!-- Phase 1: Recon -->
+<rect x="18"  y="72" width="190" height="210" rx="7" fill="#0D0022" stroke="#BF5FFF" stroke-width="2.5"/>
+<rect x="18"  y="72" width="190" height="32"  rx="7" fill="#1A0035" stroke="#BF5FFF" stroke-width="2.5"/>
+<text x="113" y="93"  text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#BF5FFF">① RECON</text>
+<text x="113" y="120" text-anchor="middle" font-family="monospace" font-size="10" fill="#8060AA">file(1)</text>
+<text x="113" y="138" text-anchor="middle" font-family="monospace" font-size="10" fill="#8060AA">strings</text>
+<text x="113" y="156" text-anchor="middle" font-family="monospace" font-size="10" fill="#8060AA">nm / objdump -d</text>
+<text x="113" y="174" text-anchor="middle" font-family="monospace" font-size="10" fill="#8060AA">checksec</text>
+<text x="113" y="192" text-anchor="middle" font-family="monospace" font-size="10" fill="#8060AA">readelf -S</text>
+<text x="113" y="210" text-anchor="middle" font-family="monospace" font-size="10" fill="#8060AA">ldd (shared libs)</text>
+<text x="113" y="242" text-anchor="middle" font-family="monospace" font-size="9" fill="#3A1060" font-style="italic">No execution —</text>
+<text x="113" y="257" text-anchor="middle" font-family="monospace" font-size="9" fill="#3A1060" font-style="italic">safe anywhere</text>
+<text x="113" y="272" text-anchor="middle" font-family="monospace" font-size="9" fill="#3A1060" font-style="italic">Static analysis</text>
+
+<!-- Arrow 1→2 -->
+<line x1="210" y1="177" x2="228" y2="177" stroke="#4A20A0" stroke-width="2.5" marker-end="url(#ra)"/>
+
+<!-- Phase 2: Disassembly -->
+<rect x="230" y="72" width="190" height="210" rx="7" fill="#001022" stroke="#00AACC" stroke-width="2.5"/>
+<rect x="230" y="72" width="190" height="32"  rx="7" fill="#001830" stroke="#00AACC" stroke-width="2.5"/>
+<text x="325" y="93"  text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#00FFFF">② DISASSEMBLE</text>
+<text x="325" y="120" text-anchor="middle" font-family="monospace" font-size="10" fill="#008898">objdump -d -M intel</text>
+<text x="325" y="138" text-anchor="middle" font-family="monospace" font-size="10" fill="#008898">Ghidra (NSA, free)</text>
+<text x="325" y="156" text-anchor="middle" font-family="monospace" font-size="10" fill="#008898">IDA Pro / IDA Free</text>
+<text x="325" y="174" text-anchor="middle" font-family="monospace" font-size="10" fill="#008898">Binary Ninja</text>
+<text x="325" y="192" text-anchor="middle" font-family="monospace" font-size="10" fill="#008898">radare2 / Cutter</text>
+<text x="325" y="210" text-anchor="middle" font-family="monospace" font-size="10" fill="#008898">Capstone engine</text>
+<text x="325" y="242" text-anchor="middle" font-family="monospace" font-size="9" fill="#1A4050" font-style="italic">Build CFG, annotate</text>
+<text x="325" y="257" text-anchor="middle" font-family="monospace" font-size="9" fill="#1A4050" font-style="italic">functions, xrefs</text>
+<text x="325" y="272" text-anchor="middle" font-family="monospace" font-size="9" fill="#1A4050" font-style="italic">Still static</text>
+
+<!-- Arrow 2→3 -->
+<line x1="422" y1="177" x2="440" y2="177" stroke="#4A20A0" stroke-width="2.5" marker-end="url(#ra)"/>
+
+<!-- Phase 3: Dynamic -->
+<rect x="442" y="72" width="190" height="210" rx="7" fill="#001A0D" stroke="#00FF88" stroke-width="2.5"/>
+<rect x="442" y="72" width="190" height="32"  rx="7" fill="#002018" stroke="#00FF88" stroke-width="2.5"/>
+<text x="537" y="93"  text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#00FF88">③ DYNAMIC</text>
+<text x="537" y="120" text-anchor="middle" font-family="monospace" font-size="10" fill="#006030">GDB + pwndbg/peda</text>
+<text x="537" y="138" text-anchor="middle" font-family="monospace" font-size="10" fill="#006030">strace / ltrace</text>
+<text x="537" y="156" text-anchor="middle" font-family="monospace" font-size="10" fill="#006030">ASAN / valgrind</text>
+<text x="537" y="174" text-anchor="middle" font-family="monospace" font-size="10" fill="#006030">afl-fuzz (fuzzing)</text>
+<text x="537" y="192" text-anchor="middle" font-family="monospace" font-size="10" fill="#006030">PIN / DynamoRIO</text>
+<text x="537" y="210" text-anchor="middle" font-family="monospace" font-size="10" fill="#006030">Frida (scripted)</text>
+<text x="537" y="242" text-anchor="middle" font-family="monospace" font-size="9" fill="#1A4030" font-style="italic">Isolated VM + snapshot</text>
+<text x="537" y="257" text-anchor="middle" font-family="monospace" font-size="9" fill="#1A4030" font-style="italic">Network off</text>
+<text x="537" y="272" text-anchor="middle" font-family="monospace" font-size="9" fill="#1A4030" font-style="italic">Break at boundaries</text>
+
+<!-- Arrow 3→4 -->
+<line x1="634" y1="177" x2="652" y2="177" stroke="#4A20A0" stroke-width="2.5" marker-end="url(#ra)"/>
+
+<!-- Phase 4: Triage -->
+<rect x="654" y="72" width="188" height="210" rx="7" fill="#1A0800" stroke="#FFB800" stroke-width="2.5"/>
+<rect x="654" y="72" width="188" height="32"  rx="7" fill="#240C00" stroke="#FFB800" stroke-width="2.5"/>
+<text x="748" y="93"  text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#FFB800">④ TRIAGE</text>
+<text x="748" y="120" text-anchor="middle" font-family="monospace" font-size="10" fill="#886000">Capture crash</text>
+<text x="748" y="138" text-anchor="middle" font-family="monospace" font-size="10" fill="#886000">Controlled? Scope?</text>
+<text x="748" y="156" text-anchor="middle" font-family="monospace" font-size="10" fill="#886000">Root cause analysis</text>
+<text x="748" y="174" text-anchor="middle" font-family="monospace" font-size="10" fill="#886000">CVSS scoring</text>
+<text x="748" y="192" text-anchor="middle" font-family="monospace" font-size="10" fill="#886000">Min reproducer</text>
+<text x="748" y="210" text-anchor="middle" font-family="monospace" font-size="10" fill="#886000">Vendor disclosure</text>
+<text x="748" y="242" text-anchor="middle" font-family="monospace" font-size="9" fill="#4A3010" font-style="italic">Root cause =</text>
+<text x="748" y="257" text-anchor="middle" font-family="monospace" font-size="9" fill="#4A3010" font-style="italic">violated assumption</text>
+<text x="748" y="272" text-anchor="middle" font-family="monospace" font-size="9" fill="#4A3010" font-style="italic">90-day window</text>
+
+<!-- Tool reference box -->
+<rect x="18" y="298" width="824" height="210" rx="6" fill="#0A0018" stroke="#1A0040"/>
+<text x="430" y="317" text-anchor="middle" font-family="monospace" font-size="10" fill="#4A20A0" letter-spacing="3">KEY TOOLS REFERENCE</text>
+<line x1="28" y1="325" x2="832" y2="325" stroke="#1A0040"/>
+
+<g font-family="monospace" font-size="10">
+<text x="34" y="345" fill="#BF5FFF" font-weight="bold">GDB+pwndbg</text><text x="145" y="345" fill="#6070A0">Interactive debugger. x/gx $rsp, info registers, disas, break *addr, bt (backtrace)</text>
+<text x="34" y="365" fill="#00FFFF" font-weight="bold">checksec    </text><text x="145" y="365" fill="#6070A0">Reports NX, RELRO, canary, PIE, ASLR, RUNPATH status of a binary</text>
+<text x="34" y="385" fill="#00FF88" font-weight="bold">Ghidra      </text><text x="145" y="385" fill="#6070A0">NSA free RE framework. Decompiler produces C-like pseudocode. CFG, xrefs, scripts.</text>
+<text x="34" y="405" fill="#FFB800" font-weight="bold">ASAN        </text><text x="145" y="405" fill="#6070A0">-fsanitize=address. Shadow memory byte-granularity. Detects OOB, UAF, double-free.</text>
+<text x="34" y="425" fill="#FF6B6B" font-weight="bold">strace      </text><text x="145" y="425" fill="#6070A0">Traces system calls: open, read, write, mmap, execve — shows what binary asks the OS</text>
+<text x="34" y="445" fill="#8866CC" font-weight="bold">afl-fuzz    </text><text x="145" y="445" fill="#6070A0">Coverage-guided fuzzer. Mutates inputs, tracks new code paths, reports crashes automatically.</text>
+<text x="34" y="465" fill="#CC8800" font-weight="bold">BinDiff     </text><text x="145" y="465" fill="#6070A0">Patch diffing: compares vulnerable vs patched binary. Identifies changed functions.</text>
+<text x="34" y="490" fill="#FF4466">⚠ Safety:   </text><text x="110" y="490" fill="#662244">All dynamic analysis in isolated VM with snapshots. Network disabled. Only test binaries you own or have authorization to test.</text>
+</g>
+</svg>

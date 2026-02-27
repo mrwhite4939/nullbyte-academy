@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="#070010"/>
+<text x="400" y="36" text-anchor="middle" font-family="monospace" font-size="17" font-weight="bold" fill="#00FFFF" letter-spacing="4">HEAP CHUNK ANATOMY  (ptmalloc)</text>
+<text x="400" y="57" text-anchor="middle" font-family="monospace" font-size="10" fill="#3A2060" letter-spacing="3">glibc malloc implementation  ·  NullByte Academy</text>
+
+<!-- Chunk A: allocated -->
+<text x="180" y="84" text-anchor="middle" font-family="monospace" font-size="11" fill="#FFB800" font-weight="bold">CHUNK A  (allocated)</text>
+<rect x="60"  y="92"  width="240" height="34" rx="3" fill="#1A0800" stroke="#FFB800" stroke-width="1.5"/>
+<text x="180" y="110" text-anchor="middle" font-family="monospace" font-size="10" fill="#FFB800">prev_size</text>
+<text x="180" y="123" text-anchor="middle" font-family="monospace" font-size="9" fill="#664400">0 if prev chunk in use</text>
+<rect x="60"  y="128" width="240" height="34" rx="3" fill="#1A0800" stroke="#FFB800" stroke-width="2"/>
+<text x="180" y="146" text-anchor="middle" font-family="monospace" font-size="10" fill="#FFB800">size  | P | M | A flags</text>
+<text x="180" y="159" text-anchor="middle" font-family="monospace" font-size="9" fill="#886000">P=prev_in_use, M=mmaped, A=non-main-arena</text>
+<rect x="60"  y="164" width="240" height="80" rx="3" fill="#100800" stroke="#CC6600" stroke-width="1.5"/>
+<text x="180" y="200" text-anchor="middle" font-family="monospace" font-size="11" fill="#CC6600">User Data</text>
+<text x="180" y="218" text-anchor="middle" font-family="monospace" font-size="9" fill="#664400">malloc() returns pointer here</text>
+<text x="180" y="231" text-anchor="middle" font-family="monospace" font-size="9" fill="#664400">overflowing this → corrupts B.prev_size</text>
+
+<!-- Arrow showing pointer -->
+<text x="20" y="204" font-family="monospace" font-size="9" fill="#CC6600">ptr →</text>
+
+<!-- Chunk B: free -->
+<text x="180" y="264" text-anchor="middle" font-family="monospace" font-size="11" fill="#00FF88" font-weight="bold">CHUNK B  (free)</text>
+<rect x="60"  y="272" width="240" height="30" rx="3" fill="#001A0D" stroke="#00FF88" stroke-width="1.5"/>
+<text x="180" y="291" text-anchor="middle" font-family="monospace" font-size="10" fill="#00FF88">prev_size  (= size of A)</text>
+<rect x="60"  y="304" width="240" height="30" rx="3" fill="#001A0D" stroke="#00FF88" stroke-width="2"/>
+<text x="180" y="323" text-anchor="middle" font-family="monospace" font-size="10" fill="#00FF88">size  | flags</text>
+<rect x="60"  y="336" width="240" height="28" rx="3" fill="#001A0D" stroke="#00FF88" stroke-width="1.5"/>
+<text x="180" y="354" text-anchor="middle" font-family="monospace" font-size="10" fill="#00FF88">fd  (forward freelist ptr)</text>
+<rect x="60"  y="366" width="240" height="28" rx="3" fill="#001A0D" stroke="#00FF88" stroke-width="1.5"/>
+<text x="180" y="384" text-anchor="middle" font-family="monospace" font-size="10" fill="#00FF88">bk  (backward freelist ptr)</text>
+<rect x="60"  y="396" width="240" height="38" rx="3" fill="#001008" stroke="#006030" stroke-width="1"/>
+<text x="180" y="419" text-anchor="middle" font-family="monospace" font-size="10" fill="#006030">unused space</text>
+
+<!-- Right panel: explanation -->
+<rect x="340" y="72" width="440" height="410" rx="6" fill="#0A0018" stroke="#1A0040"/>
+<text x="560" y="94" text-anchor="middle" font-family="monospace" font-size="12" fill="#4A20A0" letter-spacing="2">PTMALLOC KEY CONCEPTS</text>
+<line x1="350" y1="102" x2="770" y2="102" stroke="#1A0040"/>
+
+<g font-family="monospace" font-size="10">
+<text x="358" y="122" fill="#FFB800" font-weight="bold">Chunk Header (2 words = 16 bytes on x64):</text>
+<text x="358" y="140" fill="#6070A0">prev_size: size of preceding chunk (if free). Also used as</text>
+<text x="358" y="156" fill="#6070A0">space for data of prior chunk when prior chunk is in use.</text>
+<text x="358" y="174" fill="#6070A0">size: current chunk size (always 16-byte aligned). Bottom 3</text>
+<text x="358" y="190" fill="#6070A0">bits used for flags — real size = (size &amp; ~7).</text>
+
+<text x="358" y="212" fill="#00FF88" font-weight="bold">Free Chunk Extra Fields:</text>
+<text x="358" y="230" fill="#6070A0">fd (forward pointer): next chunk in same free bin</text>
+<text x="358" y="246" fill="#6070A0">bk (backward pointer): prev chunk in same free bin</text>
+<text x="358" y="262" fill="#6070A0">These overwrite user data space — reading freed memory</text>
+<text x="358" y="278" fill="#6070A0">can leak heap addresses (information disclosure).</text>
+
+<text x="358" y="300" fill="#00AACC" font-weight="bold">Bin System (free chunk organization):</text>
+<text x="358" y="318" fill="#6070A0">tcache:   per-thread, size classes &lt;= 1032B (fast, unsafe)</text>
+<text x="358" y="334" fill="#6070A0">fastbins: small chunks, LIFO, no coalescing</text>
+<text x="358" y="350" fill="#6070A0">smallbins: chunks &lt; 1024B, FIFO doubly-linked</text>
+<text x="358" y="366" fill="#6070A0">largebins: chunks &gt;= 1024B, sorted by size</text>
+<text x="358" y="382" fill="#6070A0">unsorted:  recently freed, scanned on next malloc</text>
+
+<text x="358" y="404" fill="#FF4466" font-weight="bold">Security Implications:</text>
+<text x="358" y="422" fill="#6070A0">Heap overflow → corrupt B.size or B.fd/bk → controlled</text>
+<text x="358" y="438" fill="#6070A0">write on malloc/free (unlink attack, tcache poisoning).</text>
+<text x="358" y="454" fill="#6070A0">Use-after-free → stale ptr reads fd/bk → heap address</text>
+<text x="358" y="470" fill="#6070A0">leak. Modern mitigations: tcache key, safe-linking XOR.</text>
+</g>
+</svg>

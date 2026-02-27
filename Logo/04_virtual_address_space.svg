@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 660" width="720" height="660">
+<rect width="720" height="660" fill="#070010"/>
+<text x="360" y="36" text-anchor="middle" font-family="monospace" font-size="17" font-weight="bold" fill="#00FFFF" letter-spacing="4">VIRTUAL ADDRESS SPACE</text>
+<text x="360" y="57" text-anchor="middle" font-family="monospace" font-size="10" fill="#3A2060" letter-spacing="3">x86-64 Linux  ·  48-bit canonical addresses  ·  NullByte Academy</text>
+
+<!-- HIGH label -->
+<text x="14" y="88" font-family="monospace" font-size="9" fill="#2A1060">HIGH</text>
+<text x="695" y="88" text-anchor="end" font-family="monospace" font-size="9" fill="#2A1060">0xFFFFFFFFFFFF</text>
+
+<!-- Kernel -->
+<rect x="30" y="88" width="490" height="56" rx="5" fill="#0D0008" stroke="#661A33" stroke-width="2"/>
+<text x="275" y="112" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#AA3355">KERNEL SPACE</text>
+<text x="275" y="131" text-anchor="middle" font-family="monospace" font-size="10" fill="#551122">0xFFFF800000000000 → 0xFFFFFFFFFFFFFFFF  |  Ring 0 only — user access = SIGSEGV</text>
+<rect x="540" y="97" width="160" height="38" rx="3" fill="#0A0005" stroke="#441122"/>
+<text x="620" y="115" text-anchor="middle" font-family="monospace" font-size="10" fill="#881133">NO ACCESS</text>
+<text x="620" y="129" text-anchor="middle" font-family="monospace" font-size="9" fill="#441122">Ring 0 only</text>
+
+<!-- Stack -->
+<rect x="30" y="152" width="490" height="60" rx="5" fill="#0F0028" stroke="#8844CC" stroke-width="2"/>
+<text x="275" y="176" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#BF5FFF">STACK  (main thread)</text>
+<text x="275" y="196" text-anchor="middle" font-family="monospace" font-size="10" fill="#604090">~0x7FFF00000000  |  grows ↓ downward  |  RW  |  ASLR randomized</text>
+<rect x="540" y="161" width="160" height="42" rx="3" fill="#0D001A" stroke="#6633AA"/>
+<text x="620" y="178" text-anchor="middle" font-family="monospace" font-size="10" fill="#BF5FFF">RW  (no exec)</text>
+<text x="620" y="193" text-anchor="middle" font-family="monospace" font-size="9" fill="#6633AA">NX enforced</text>
+<text x="275" y="225" text-anchor="middle" font-family="monospace" font-size="14" fill="#4A20A0">↓  grows toward lower addresses</text>
+
+<!-- mmap / libs -->
+<rect x="30" y="238" width="490" height="60" rx="5" fill="#001030" stroke="#004488" stroke-width="2"/>
+<text x="275" y="260" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#00AACC">MMAP / SHARED LIBRARIES</text>
+<text x="275" y="279" text-anchor="middle" font-family="monospace" font-size="10" fill="#003566">libc.so, ld.so, libpthread…  |  RX / RW  |  ASLR randomized each run</text>
+<rect x="540" y="247" width="160" height="42" rx="3" fill="#001020" stroke="#003466"/>
+<text x="620" y="264" text-anchor="middle" font-family="monospace" font-size="10" fill="#00AACC">RX + RW</text>
+<text x="620" y="279" text-anchor="middle" font-family="monospace" font-size="9" fill="#003566">ASLR</text>
+
+<!-- Gap -->
+<text x="275" y="314" text-anchor="middle" font-family="monospace" font-size="10" fill="#1A0040">— — — — — — — unmapped gap (virtual hole) — — — — — — —</text>
+
+<!-- Heap -->
+<rect x="30" y="324" width="490" height="60" rx="5" fill="#1A0800" stroke="#FF6600" stroke-width="2"/>
+<text x="275" y="346" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#FF8833">HEAP</text>
+<text x="275" y="365" text-anchor="middle" font-family="monospace" font-size="10" fill="#884400">brk region  |  grows ↑ upward  |  RW  |  ptmalloc / jemalloc</text>
+<rect x="540" y="333" width="160" height="42" rx="3" fill="#120600" stroke="#994400"/>
+<text x="620" y="350" text-anchor="middle" font-family="monospace" font-size="10" fill="#FF8833">RW  (no exec)</text>
+<text x="620" y="365" text-anchor="middle" font-family="monospace" font-size="9" fill="#884400">NX enforced</text>
+<text x="275" y="398" text-anchor="middle" font-family="monospace" font-size="14" fill="#4A20A0">↑  grows toward higher addresses</text>
+
+<!-- BSS -->
+<rect x="30" y="408" width="490" height="46" rx="4" fill="#0A0A00" stroke="#444400" stroke-width="1.5"/>
+<text x="275" y="428" text-anchor="middle" font-family="monospace" font-size="12" fill="#888800">.bss  — uninitialized globals  |  RW  |  zero-filled at startup</text>
+<text x="275" y="446" text-anchor="middle" font-family="monospace" font-size="9" fill="#444400">Global and static variables declared without initializer</text>
+<rect x="540" y="415" width="160" height="32" rx="3" fill="#080800" stroke="#444400"/>
+<text x="620" y="435" text-anchor="middle" font-family="monospace" font-size="10" fill="#888800">RW</text>
+
+<!-- Data -->
+<rect x="30" y="458" width="490" height="46" rx="4" fill="#0A0A00" stroke="#446600" stroke-width="1.5"/>
+<text x="275" y="478" text-anchor="middle" font-family="monospace" font-size="12" fill="#88AA00">.data  — initialized globals  |  RW  |  explicitly initialized</text>
+<text x="275" y="496" text-anchor="middle" font-family="monospace" font-size="9" fill="#446600">int g = 42; — lives here. Writable through pointers.</text>
+<rect x="540" y="465" width="160" height="32" rx="3" fill="#080800" stroke="#446600"/>
+<text x="620" y="485" text-anchor="middle" font-family="monospace" font-size="10" fill="#88AA00">RW</text>
+
+<!-- Rodata -->
+<rect x="30" y="508" width="490" height="46" rx="4" fill="#001510" stroke="#226644" stroke-width="1.5"/>
+<text x="275" y="528" text-anchor="middle" font-family="monospace" font-size="12" fill="#44AA66">.rodata  — constants &amp; string literals  |  R only</text>
+<text x="275" y="546" text-anchor="middle" font-family="monospace" font-size="9" fill="#226644">Writes cause SIGSEGV. NX applies. Not as "constant" as it seems.</text>
+<rect x="540" y="515" width="160" height="32" rx="3" fill="#001010" stroke="#226644"/>
+<text x="620" y="535" text-anchor="middle" font-family="monospace" font-size="10" fill="#44AA66">R  only</text>
+
+<!-- Text -->
+<rect x="30" y="558" width="490" height="46" rx="4" fill="#001025" stroke="#004488" stroke-width="2"/>
+<text x="275" y="578" text-anchor="middle" font-family="monospace" font-size="12" fill="#00AACC">.text  — machine code  |  R+X  |  NX on all data pages</text>
+<text x="275" y="596" text-anchor="middle" font-family="monospace" font-size="9" fill="#003566">Executable, non-writable. PIE randomizes load address. ROP reuses code here.</text>
+<rect x="540" y="565" width="160" height="32" rx="3" fill="#001020" stroke="#004488"/>
+<text x="620" y="583" text-anchor="middle" font-family="monospace" font-size="10" fill="#00AACC">R + EXEC</text>
+
+<!-- NULL -->
+<rect x="30" y="608" width="490" height="40" rx="4" fill="#040010" stroke="#330033" stroke-width="1"/>
+<text x="275" y="630" text-anchor="middle" font-family="monospace" font-size="11" fill="#440044">NULL guard page  —  0x0000000000000000  —  unmapped</text>
+<rect x="540" y="613" width="160" height="28" rx="3" fill="#040005" stroke="#220022"/>
+<text x="620" y="632" text-anchor="middle" font-family="monospace" font-size="9" fill="#440044">SIGSEGV</text>
+
+<!-- LOW label -->
+<text x="14" y="654" font-family="monospace" font-size="9" fill="#2A1060">LOW</text>
+<text x="695" y="654" text-anchor="end" font-family="monospace" font-size="9" fill="#2A1060">0x0000000000000000</text>
+</svg>

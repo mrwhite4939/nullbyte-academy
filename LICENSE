@@ -1,0 +1,54 @@
+MIT License
+
+Copyright © 2026 NullByte Academy
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Usage Rights
+
+Under this license, you are free to:
+
+- **Use** the educational materials, code, and documentation for personal or commercial purposes
+- **Copy and distribute** copies of any part of this project
+- **Modify** and build upon the material for your own projects
+- **Sublicense** derivative works under the same or compatible terms
+
+## Conditions
+
+- You must retain the above copyright notice and this license in all copies or substantial portions of the work
+- Attribution to **NullByte Academy** is appreciated but not legally required beyond preserving the copyright notice
+
+## Contributions
+
+Contributions to NullByte Academy are welcome and encouraged. By submitting a pull request or contributing any content to this project, you agree that your contribution will be licensed under the same MIT License terms as this project.
+
+Contributions must comply with the ethical guidelines outlined in `SECURITY.md` and `03_ETHICS.md`. Submissions that include:
+
+- Functional exploit code or shellcode
+- Payload construction tutorials
+- Bypass instructions targeting production systems
+- Content that could facilitate unauthorized access to computer systems
+
+...will be declined and removed from consideration.
+
+## Disclaimer
+
+The educational content in NullByte Academy is provided for legitimate security research, defensive programming, and academic study purposes only. The authors and contributors accept no responsibility for misuse of any concepts, techniques, or information presented within this project. Users are solely responsible for ensuring their activities comply with all applicable laws and regulations in their jurisdiction.

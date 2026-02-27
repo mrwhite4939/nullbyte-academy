@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+  <rect width="800" height="200" fill="#0D0D0D"/>
+  <!-- Grid lines -->
+  <line x1="0" y1="100" x2="800" y2="100" stroke="#00FF41" stroke-width="0.3" opacity="0.15"/>
+  <line x1="400" y1="0" x2="400" y2="200" stroke="#00FF41" stroke-width="0.3" opacity="0.15"/>
+  <!-- Corner brackets -->
+  <polyline points="20,20 20,40 40,40" stroke="#00FF41" stroke-width="2" fill="none"/>
+  <polyline points="780,20 780,40 760,40" stroke="#00FF41" stroke-width="2" fill="none"/>
+  <polyline points="20,180 20,160 40,160" stroke="#00FF41" stroke-width="2" fill="none"/>
+  <polyline points="780,180 780,160 760,160" stroke="#00FF41" stroke-width="2" fill="none"/>
+  <!-- Main title -->
+  <text x="400" y="95" font-family="Courier New, monospace" font-size="52" font-weight="bold" fill="#00FF41" text-anchor="middle">NullByte Academy</text>
+  <!-- Subtitle -->
+  <text x="400" y="135" font-family="Courier New, monospace" font-size="16" fill="#F0F0F0" text-anchor="middle" opacity="0.8">Understand the machine. Defend what matters.</text>
+  <!-- Decorative hex -->
+  <text x="60" y="110" font-family="Courier New, monospace" font-size="10" fill="#00FF41" opacity="0.4">0x4E42</text>
+  <text x="680" y="110" font-family="Courier New, monospace" font-size="10" fill="#00FF41" opacity="0.4">0xDEAD</text>
+</svg>

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 640" width="760" height="640">
+<rect width="760" height="640" fill="#070010"/>
+<text x="380" y="36" text-anchor="middle" font-family="monospace" font-size="17" font-weight="bold" fill="#00FFFF" letter-spacing="4">STACK FRAME ANATOMY</text>
+<text x="380" y="57" text-anchor="middle" font-family="monospace" font-size="10" fill="#3A2060" letter-spacing="3">x86-64  ·  System V AMD64 ABI  ·  NullByte Academy</text>
+
+<!-- Column labels -->
+<text x="95"  y="78" text-anchor="middle" font-family="monospace" font-size="9" fill="#3A2060" letter-spacing="1">ADDRESS</text>
+<text x="330" y="78" text-anchor="middle" font-family="monospace" font-size="9" fill="#3A2060" letter-spacing="1">REGION CONTENTS</text>
+<text x="610" y="78" text-anchor="middle" font-family="monospace" font-size="9" fill="#3A2060" letter-spacing="1">SECURITY NOTES</text>
+<line x1="22" y1="83" x2="738" y2="83" stroke="#2A1060" stroke-width="1"/>
+
+<!-- HIGH label -->
+<text x="11" y="108" font-family="monospace" font-size="8" fill="#2A1060" writing-mode="tb">HIGH ↑</text>
+
+<!-- Row 1: Caller locals -->
+<rect x="22" y="88" width="540" height="48" rx="4" fill="#0A001A" stroke="#2A1060"/>
+<text x="95"  y="109" text-anchor="middle" font-family="monospace" font-size="10" fill="#3A2060">caller+N</text>
+<text x="95"  y="126" text-anchor="middle" font-family="monospace" font-size="9" fill="#2A1060">…</text>
+<text x="330" y="116" text-anchor="middle" font-family="monospace" font-size="11" fill="#5A6080">Caller's local variables and saved registers</text>
+<text x="610" y="116" text-anchor="middle" font-family="monospace" font-size="9" fill="#2A1060">above current frame</text>
+
+<!-- Row 2: Return Address ★ -->
+<rect x="22" y="140" width="540" height="52" rx="4" fill="#1A0022" stroke="#BF5FFF" stroke-width="2.5"/>
+<text x="95"  y="162" text-anchor="middle" font-family="monospace" font-size="10" fill="#BF5FFF">RBP+8</text>
+<text x="95"  y="179" text-anchor="middle" font-family="monospace" font-size="9" fill="#7040A0">0x7fff…</text>
+<text x="295" y="158" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#FFFFFF">Return Address  (saved RIP)</text>
+<text x="295" y="177" text-anchor="middle" font-family="monospace" font-size="10" fill="#8060AA">Pushed by CALL, popped by RET — redirected on overflow</text>
+<rect x="562" y="147" width="138" height="38" rx="3" fill="#1A0030" stroke="#BF5FFF"/>
+<text x="631" y="163" text-anchor="middle" font-family="monospace" font-size="10" fill="#BF5FFF">⚠ CRITICAL</text>
+<text x="631" y="178" text-anchor="middle" font-family="monospace" font-size="9" fill="#8040C0">control-flow target</text>
+
+<!-- Row 3: Saved RBP -->
+<rect x="22" y="196" width="540" height="52" rx="4" fill="#001022" stroke="#00AACC" stroke-width="2"/>
+<text x="95"  y="218" text-anchor="middle" font-family="monospace" font-size="10" fill="#00FFFF">RBP+0</text>
+<text x="95"  y="235" text-anchor="middle" font-family="monospace" font-size="9" fill="#006880">prev RBP</text>
+<text x="295" y="214" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#FFFFFF">Saved RBP  (caller frame pointer)</text>
+<text x="295" y="233" text-anchor="middle" font-family="monospace" font-size="10" fill="#007888">PUSH RBP in prologue; POP RBP in epilogue</text>
+<rect x="562" y="203" width="138" height="38" rx="3" fill="#001A30" stroke="#00AACC"/>
+<text x="631" y="219" text-anchor="middle" font-family="monospace" font-size="10" fill="#00FFFF">← RBP now</text>
+<text x="631" y="234" text-anchor="middle" font-family="monospace" font-size="9" fill="#006880">frame anchor</text>
+
+<!-- Row 4: Canary -->
+<rect x="22" y="252" width="540" height="52" rx="4" fill="#001A0D" stroke="#00FF88" stroke-width="2"/>
+<text x="95"  y="274" text-anchor="middle" font-family="monospace" font-size="10" fill="#00FF88">RBP-8</text>
+<text x="95"  y="291" text-anchor="middle" font-family="monospace" font-size="9" fill="#006030">0x9f3c…00</text>
+<text x="295" y="270" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#FFFFFF">Stack Canary  ★</text>
+<text x="295" y="289" text-anchor="middle" font-family="monospace" font-size="10" fill="#006030">Random value; null-terminated; verified before every RET</text>
+<rect x="562" y="259" width="138" height="38" rx="3" fill="#001A10" stroke="#00FF88"/>
+<text x="631" y="275" text-anchor="middle" font-family="monospace" font-size="10" fill="#00FF88">DEFENSE</text>
+<text x="631" y="290" text-anchor="middle" font-family="monospace" font-size="9" fill="#006030">compiler-injected</text>
+
+<!-- Row 5: Local vars -->
+<rect x="22" y="308" width="540" height="52" rx="4" fill="#0D0020" stroke="#4A20A0"/>
+<text x="95"  y="330" text-anchor="middle" font-family="monospace" font-size="10" fill="#6040A0">RBP-N</text>
+<text x="95"  y="347" text-anchor="middle" font-family="monospace" font-size="9" fill="#3A1060">int, ptr…</text>
+<text x="295" y="326" text-anchor="middle" font-family="monospace" font-size="12" fill="#C8D4E8">Local variables  (ints, pointers, structs)</text>
+<text x="295" y="345" text-anchor="middle" font-family="monospace" font-size="10" fill="#4A3080">Compiler-ordered; layout may differ from source order</text>
+<text x="631" y="334" text-anchor="middle" font-family="monospace" font-size="9" fill="#4A3080">vary by frame</text>
+
+<!-- Row 6: Buffer ★ -->
+<rect x="22" y="364" width="540" height="52" rx="4" fill="#1A0010" stroke="#FF4466" stroke-width="2.5"/>
+<text x="95"  y="386" text-anchor="middle" font-family="monospace" font-size="10" fill="#FF4466">RBP-88</text>
+<text x="95"  y="403" text-anchor="middle" font-family="monospace" font-size="9" fill="#880030">buf[64]</text>
+<text x="295" y="382" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#FFFFFF">char buf[64]  — fixed-size buffer</text>
+<text x="295" y="401" text-anchor="middle" font-family="monospace" font-size="10" fill="#AA2040">Overflow writes UPWARD ↑ toward canary → ret addr</text>
+<rect x="562" y="371" width="138" height="38" rx="3" fill="#1A0015" stroke="#FF4466"/>
+<text x="631" y="387" text-anchor="middle" font-family="monospace" font-size="10" fill="#FF4466">⚠ DANGER</text>
+<text x="631" y="402" text-anchor="middle" font-family="monospace" font-size="9" fill="#880030">overflow vector</text>
+
+<!-- Row 7: RSP -->
+<rect x="22" y="420" width="540" height="48" rx="4" fill="#001022" stroke="#00AACC"/>
+<text x="95"  y="442" text-anchor="middle" font-family="monospace" font-size="10" fill="#00FFFF">RBP-96</text>
+<text x="95"  y="459" text-anchor="middle" font-family="monospace" font-size="9" fill="#005060">RSP →</text>
+<text x="295" y="440" text-anchor="middle" font-family="monospace" font-size="12" fill="#C8D4E8">Alignment padding / current stack top</text>
+<text x="295" y="458" text-anchor="middle" font-family="monospace" font-size="10" fill="#204060">16-byte boundary required before CALL (SIMD constraint)</text>
+<text x="631" y="448" text-anchor="middle" font-family="monospace" font-size="10" fill="#00FFFF">← RSP</text>
+
+<!-- LOW label -->
+<text x="11" y="480" font-family="monospace" font-size="8" fill="#2A1060" writing-mode="tb">LOW ↓</text>
+
+<!-- Overflow arrow -->
+<defs><marker id="ov" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#FF4466"/></marker></defs>
+<path d="M 590 398 L 650 398 L 650 175 L 595 175" stroke="#FF4466" stroke-width="1.5" fill="none" stroke-dasharray="5,3" marker-end="url(#ov)"/>
+<text x="670" y="295" text-anchor="middle" font-family="monospace" font-size="10" fill="#FF4466">overflow</text>
+<text x="670" y="310" text-anchor="middle" font-family="monospace" font-size="10" fill="#FF4466">direction</text>
+<text x="670" y="325" text-anchor="middle" font-family="monospace" font-size="10" fill="#FF4466">↑</text>
+
+<!-- Prologue / epilogue -->
+<rect x="22" y="480" width="716" height="60" rx="5" fill="#0A0018" stroke="#1A0040"/>
+<text x="380" y="499" text-anchor="middle" font-family="monospace" font-size="9" fill="#4A20A0" letter-spacing="3">FUNCTION PROLOGUE / EPILOGUE</text>
+<text x="40" y="518" font-family="monospace" font-size="10" fill="#00FF88">Prologue:</text>
+<text x="115" y="518" font-family="monospace" font-size="10" fill="#6070A0">push rbp  ;  mov rbp, rsp  ;  sub rsp, N</text>
+<text x="40" y="534" font-family="monospace" font-size="10" fill="#00AACC">Epilogue:</text>
+<text x="115" y="534" font-family="monospace" font-size="10" fill="#6070A0">mov rsp, rbp  ;  pop rbp  ;  ret</text>
+
+<!-- Legend -->
+<rect x="22" y="550" width="716" height="80" rx="5" fill="#0A0018" stroke="#1A0040"/>
+<text x="380" y="568" text-anchor="middle" font-family="monospace" font-size="9" fill="#4A20A0" letter-spacing="3">LEGEND</text>
+<rect x="40"  y="575" width="12" height="12" fill="#1A0022" stroke="#BF5FFF" stroke-width="1.5"/><text x="58"  y="586" font-family="monospace" font-size="9" fill="#BF5FFF">Control Flow Critical</text>
+<rect x="220" y="575" width="12" height="12" fill="#001A0D" stroke="#00FF88" stroke-width="1.5"/><text x="238" y="586" font-family="monospace" font-size="9" fill="#00FF88">Defense / Canary</text>
+<rect x="380" y="575" width="12" height="12" fill="#1A0010" stroke="#FF4466" stroke-width="1.5"/><text x="398" y="586" font-family="monospace" font-size="9" fill="#FF4466">Overflow Danger</text>
+<rect x="540" y="575" width="12" height="12" fill="#001022" stroke="#00AACC" stroke-width="1.5"/><text x="558" y="586" font-family="monospace" font-size="9" fill="#00AACC">Frame Registers</text>
+<text x="40" y="616" font-family="monospace" font-size="9" fill="#3A2060">Stack grows DOWNWARD (decrements RSP). Buffer overflows write UPWARD toward return address.</text>
+<text x="40" y="628" font-family="monospace" font-size="9" fill="#3A2060">Canary sits between locals and saved RBP — must be bypassed before reaching return address.</text>
+</svg>

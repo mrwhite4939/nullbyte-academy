@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 620" width="780" height="620">
+<rect width="780" height="620" fill="#070010"/>
+<text x="390" y="36" text-anchor="middle" font-family="monospace" font-size="17" font-weight="bold" fill="#00FFFF" letter-spacing="4">DEFENSE-IN-DEPTH</text>
+<text x="390" y="57" text-anchor="middle" font-family="monospace" font-size="10" fill="#3A2060" letter-spacing="3">Each layer blocks a different attacker requirement  ·  NullByte Academy</text>
+
+<!-- Layer 1 — widest, top -->
+<rect x="20" y="72" width="740" height="60" rx="7" fill="#001A0D" stroke="#00FF88" stroke-width="3"/>
+<text x="390" y="96"  text-anchor="middle" font-family="monospace" font-size="14" font-weight="bold" fill="#00FF88">Shadow Stack  (Intel CET)</text>
+<text x="390" y="118" text-anchor="middle" font-family="monospace" font-size="10" fill="#006030">Hardware-maintained read-only copy of return addresses — CPU compares on every RET — mismatch = immediate fault</text>
+<text x="730" y="106" text-anchor="end" font-family="monospace" font-size="9" fill="#00FF88">L1</text>
+
+<!-- Layer 2 -->
+<rect x="40" y="142" width="700" height="56" rx="6" fill="#001025" stroke="#00AACC" stroke-width="2.5"/>
+<text x="390" y="164" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#00FFFF">CFI  (Control Flow Integrity)</text>
+<text x="390" y="182" text-anchor="middle" font-family="monospace" font-size="10" fill="#004466">Compiler validates all indirect CALL/JMP targets against compile-time call graph — forward and backward edge</text>
+<text x="720" y="172" text-anchor="end" font-family="monospace" font-size="9" fill="#00AACC">L2</text>
+
+<!-- Layer 3 -->
+<rect x="60" y="208" width="660" height="56" rx="6" fill="#100020" stroke="#BF5FFF" stroke-width="2.5"/>
+<text x="390" y="230" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#BF5FFF">ASLR + PIE  (~28 bits entropy)</text>
+<text x="390" y="248" text-anchor="middle" font-family="monospace" font-size="10" fill="#5A2080">Randomizes stack, heap, library, and executable base each run — requires information leak to determine address</text>
+<text x="700" y="238" text-anchor="end" font-family="monospace" font-size="9" fill="#BF5FFF">L3</text>
+
+<!-- Layer 4 -->
+<rect x="80" y="274" width="620" height="56" rx="6" fill="#100010" stroke="#FF4466" stroke-width="2.5"/>
+<text x="390" y="296" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#FF6688">NX / DEP  (XD bit in page table)</text>
+<text x="390" y="314" text-anchor="middle" font-family="monospace" font-size="10" fill="#882244">Hardware-enforced: data pages non-executable — eliminates shellcode injection — does NOT stop code reuse (ROP)</text>
+<text x="680" y="304" text-anchor="end" font-family="monospace" font-size="9" fill="#FF4466">L4</text>
+
+<!-- Layer 5 -->
+<rect x="100" y="340" width="580" height="56" rx="6" fill="#001A0D" stroke="#00CC66" stroke-width="2"/>
+<text x="390" y="362" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#00DD88">Stack Canary  (__stack_chk_guard)</text>
+<text x="390" y="380" text-anchor="middle" font-family="monospace" font-size="10" fill="#006030">Random value between locals and return addr — verified before RET — requires read primitive to bypass</text>
+<text x="660" y="370" text-anchor="end" font-family="monospace" font-size="9" fill="#00CC66">L5</text>
+
+<!-- Layer 6 -->
+<rect x="120" y="406" width="540" height="56" rx="5" fill="#0A001A" stroke="#6644AA" stroke-width="2"/>
+<text x="390" y="428" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#8866CC">Full RELRO  —  GOT read-only</text>
+<text x="390" y="446" text-anchor="middle" font-family="monospace" font-size="10" fill="#443388">Resolves all dynamic symbols at startup; marks Global Offset Table read-only — prevents GOT overwrite</text>
+<text x="640" y="436" text-anchor="end" font-family="monospace" font-size="9" fill="#6644AA">L6</text>
+
+<!-- Layer 7 -->
+<rect x="140" y="472" width="500" height="56" rx="5" fill="#1A0800" stroke="#CC8800" stroke-width="2"/>
+<text x="390" y="494" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#FFB800">ASAN / HWASAN / MTE</text>
+<text x="390" y="512" text-anchor="middle" font-family="monospace" font-size="10" fill="#664400">Shadow memory / hardware tags — byte-granular detection of OOB, use-after-free, double-free at runtime</text>
+<text x="620" y="502" text-anchor="end" font-family="monospace" font-size="9" fill="#CC8800">L7</text>
+
+<!-- Summary box -->
+<rect x="20" y="542" width="740" height="68" rx="6" fill="#0A0018" stroke="#1A0040"/>
+<text x="390" y="560" text-anchor="middle" font-family="monospace" font-size="10" fill="#4A20A0" letter-spacing="2">WHAT EACH LAYER FORCES THE ATTACKER TO ACQUIRE</text>
+<text x="34" y="578" font-family="monospace" font-size="9" fill="#4A3080">NX       → must use code reuse (ROP) instead of injecting shellcode</text>
+<text x="34" y="592" font-family="monospace" font-size="9" fill="#4A3080">ASLR+PIE → must obtain an information leak to compute current-run addresses</text>
+<text x="34" y="606" font-family="monospace" font-size="9" fill="#4A3080">Canary   → must read canary value via separate primitive before overwriting</text>
+<text x="420" y="578" font-family="monospace" font-size="9" fill="#4A3080">CFI      → gadgets must be type-compatible with call sites</text>
+<text x="420" y="592" font-family="monospace" font-size="9" fill="#4A3080">Shadow Stack → no software bypass; hardware fault on mismatch</text>
+<text x="420" y="606" font-family="monospace" font-size="9" fill="#4A3080">RELRO    → cannot redirect through GOT entries</text>
+</svg>

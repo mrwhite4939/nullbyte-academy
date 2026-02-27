@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 420" width="860" height="420">
+<rect width="860" height="420" fill="#070010"/>
+<text x="430" y="36" text-anchor="middle" font-family="monospace" font-size="17" font-weight="bold" fill="#00FFFF" letter-spacing="4">VULNERABILITY LIFECYCLE &amp; RESPONSIBLE DISCLOSURE</text>
+<text x="430" y="57" text-anchor="middle" font-family="monospace" font-size="10" fill="#3A2060" letter-spacing="3">90-day industry-standard timeline  ·  NullByte Academy</text>
+
+<defs>
+  <marker id="fd" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0,10 3.5,0 7" fill="#4A20A0"/>
+  </marker>
+</defs>
+
+<!-- Stage boxes -->
+<!-- 0: Latent -->
+<rect x="18"  y="72" width="112" height="90" rx="5" fill="#0A0018" stroke="#1A0040"/>
+<text x="74" y="96"  text-anchor="middle" font-family="monospace" font-size="20" fill="#2A1060">○</text>
+<text x="74" y="116" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#3A2060">LATENT</text>
+<text x="74" y="132" text-anchor="middle" font-family="monospace" font-size="9" fill="#1A1030">Exists but</text>
+<text x="74" y="145" text-anchor="middle" font-family="monospace" font-size="9" fill="#1A1030">unknown</text>
+<line x1="132" y1="117" x2="148" y2="117" stroke="#2A1060" stroke-width="1.5" marker-end="url(#fd)"/>
+
+<!-- 1: Discovery -->
+<rect x="150" y="72" width="112" height="90" rx="5" fill="#1A0022" stroke="#BF5FFF" stroke-width="2"/>
+<text x="206" y="96"  text-anchor="middle" font-family="monospace" font-size="20" fill="#BF5FFF">◇</text>
+<text x="206" y="116" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#BF5FFF">DISCOVERY</text>
+<text x="206" y="132" text-anchor="middle" font-family="monospace" font-size="9" fill="#8040A0">Fuzzing, audit,</text>
+<text x="206" y="145" text-anchor="middle" font-family="monospace" font-size="9" fill="#8040A0">bug bounty</text>
+<line x1="264" y1="117" x2="280" y2="117" stroke="#4A20A0" stroke-width="1.5" marker-end="url(#fd)"/>
+
+<!-- 2: Confirm -->
+<rect x="282" y="72" width="112" height="90" rx="5" fill="#001022" stroke="#00AACC" stroke-width="2"/>
+<text x="338" y="96"  text-anchor="middle" font-family="monospace" font-size="20" fill="#00FFFF">◆</text>
+<text x="338" y="116" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#00FFFF">CONFIRM</text>
+<text x="338" y="132" text-anchor="middle" font-family="monospace" font-size="9" fill="#006880">Minimal repro,</text>
+<text x="338" y="145" text-anchor="middle" font-family="monospace" font-size="9" fill="#006880">root cause</text>
+<line x1="396" y1="117" x2="412" y2="117" stroke="#4A20A0" stroke-width="1.5" marker-end="url(#fd)"/>
+
+<!-- 3: Assess -->
+<rect x="414" y="72" width="112" height="90" rx="5" fill="#1A0800" stroke="#FFB800" stroke-width="2"/>
+<text x="470" y="96"  text-anchor="middle" font-family="monospace" font-size="20" fill="#FFB800">◈</text>
+<text x="470" y="116" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#FFB800">ASSESS</text>
+<text x="470" y="132" text-anchor="middle" font-family="monospace" font-size="9" fill="#886000">CVSS score,</text>
+<text x="470" y="145" text-anchor="middle" font-family="monospace" font-size="9" fill="#886000">impact scope</text>
+<line x1="528" y1="117" x2="544" y2="117" stroke="#4A20A0" stroke-width="1.5" marker-end="url(#fd)"/>
+
+<!-- 4: Disclose -->
+<rect x="546" y="72" width="112" height="90" rx="5" fill="#001A0D" stroke="#00FF88" stroke-width="2"/>
+<text x="602" y="96"  text-anchor="middle" font-family="monospace" font-size="20" fill="#00FF88">⊙</text>
+<text x="602" y="116" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#00FF88">DISCLOSE</text>
+<text x="602" y="132" text-anchor="middle" font-family="monospace" font-size="9" fill="#006030">Vendor contact,</text>
+<text x="602" y="145" text-anchor="middle" font-family="monospace" font-size="9" fill="#006030">encrypted report</text>
+<line x1="660" y1="117" x2="676" y2="117" stroke="#4A20A0" stroke-width="1.5" marker-end="url(#fd)"/>
+
+<!-- 5: Patch -->
+<rect x="678" y="72" width="86" height="90" rx="5" fill="#001A0D" stroke="#00CC66" stroke-width="1.5"/>
+<text x="721" y="96"  text-anchor="middle" font-family="monospace" font-size="16" fill="#00CC66">⚙</text>
+<text x="721" y="116" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#00CC66">PATCH</text>
+<text x="721" y="132" text-anchor="middle" font-family="monospace" font-size="9" fill="#006030">90-day</text>
+<text x="721" y="145" text-anchor="middle" font-family="monospace" font-size="9" fill="#006030">window</text>
+<line x1="766" y1="117" x2="782" y2="117" stroke="#4A20A0" stroke-width="1.5" marker-end="url(#fd)"/>
+
+<!-- 6: Publish -->
+<rect x="784" y="72" width="60" height="90" rx="5" fill="#001030" stroke="#0066AA" stroke-width="1.5"/>
+<text x="814" y="96"  text-anchor="middle" font-family="monospace" font-size="16" fill="#0088CC">★</text>
+<text x="814" y="116" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#0088CC">PUBLISH</text>
+<text x="814" y="132" text-anchor="middle" font-family="monospace" font-size="9" fill="#004466">CVE,</text>
+<text x="814" y="145" text-anchor="middle" font-family="monospace" font-size="9" fill="#004466">advisory</text>
+
+<!-- Timeline bar -->
+<rect x="18" y="178" width="824" height="26" rx="3" fill="#0A0018" stroke="#1A0040"/>
+<rect x="18" y="178" width="2"   height="26" fill="#BF5FFF"/>
+<rect x="546" y="178" width="2"  height="26" fill="#00FF88"/>
+<rect x="840" y="178" width="2"  height="26" fill="#0088CC"/>
+<text x="282" y="195" text-anchor="middle" font-family="monospace" font-size="9" fill="#3A2060">researcher works privately</text>
+<text x="693" y="195" text-anchor="middle" font-family="monospace" font-size="9" fill="#006030">vendor patch window (90 days)</text>
+<text x="25"  y="212" font-family="monospace" font-size="8" fill="#8040A0">DAY 0</text>
+<text x="540" y="212" font-family="monospace" font-size="8" fill="#00FF88">VENDOR NOTIFIED</text>
+<text x="800" y="212" text-anchor="end" font-family="monospace" font-size="8" fill="#0088CC">DEADLINE</text>
+
+<!-- CVSS table -->
+<rect x="18" y="226" width="824" height="184" rx="6" fill="#0A0018" stroke="#1A0040"/>
+<text x="430" y="244" text-anchor="middle" font-family="monospace" font-size="10" fill="#4A20A0" letter-spacing="3">CVSSv3.1 SEVERITY SCORING REFERENCE</text>
+<line x1="28" y1="252" x2="832" y2="252" stroke="#1A0040"/>
+
+<rect x="28" y="258" width="806" height="28" rx="2" fill="#1A0010"/>
+<text x="100" y="276" text-anchor="middle" font-family="monospace" font-size="11" fill="#FF4466" font-weight="bold">CRITICAL  9.0–10.0</text>
+<text x="420" y="276" text-anchor="middle" font-family="monospace" font-size="10" fill="#FF4466">Network-reachable RCE, no authentication, no user interaction</text>
+<text x="760" y="276" text-anchor="middle" font-family="monospace" font-size="9" fill="#FF4466">Patch immediately</text>
+
+<rect x="28" y="290" width="806" height="28" rx="2" fill="#1A0A00"/>
+<text x="100" y="308" text-anchor="middle" font-family="monospace" font-size="11" fill="#FF8800" font-weight="bold">HIGH      7.0–8.9</text>
+<text x="420" y="308" text-anchor="middle" font-family="monospace" font-size="10" fill="#FF8800">Network reachable, may require low-privilege auth or user interaction</text>
+<text x="760" y="308" text-anchor="middle" font-family="monospace" font-size="9" fill="#FF8800">Patch within days</text>
+
+<rect x="28" y="322" width="806" height="28" rx="2" fill="#100A00"/>
+<text x="100" y="340" text-anchor="middle" font-family="monospace" font-size="11" fill="#FFB800" font-weight="bold">MEDIUM    4.0–6.9</text>
+<text x="420" y="340" text-anchor="middle" font-family="monospace" font-size="10" fill="#FFB800">Local access or significant user interaction required</text>
+<text x="760" y="340" text-anchor="middle" font-family="monospace" font-size="9" fill="#FFB800">Patch within weeks</text>
+
+<rect x="28" y="354" width="806" height="28" rx="2" fill="#0A0A00"/>
+<text x="100" y="372" text-anchor="middle" font-family="monospace" font-size="11" fill="#88AA00" font-weight="bold">LOW       0.1–3.9</text>
+<text x="420" y="372" text-anchor="middle" font-family="monospace" font-size="10" fill="#88AA00">Minimal exploitability; requires privileged local access</text>
+<text x="760" y="372" text-anchor="middle" font-family="monospace" font-size="9" fill="#88AA00">Normal cycle</text>
+
+<text x="34" y="400" font-family="monospace" font-size="9" fill="#3A2060">CVSS Metrics: Attack Vector (N/A/L/P) · Attack Complexity (L/H) · Privileges Required (N/L/H) · User Interaction (N/R)</text>
+<text x="34" y="413" font-family="monospace" font-size="9" fill="#3A2060">Impact: Confidentiality / Integrity / Availability (N/L/H)  —  Publish only after patch is available or disclosure deadline passes.</text>
+</svg>

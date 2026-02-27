@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="380" viewBox="0 0 500 380">
+  <rect width="500" height="380" fill="#0D0D0D"/>
+  <text x="250" y="35" font-family="Courier New, monospace" font-size="15" font-weight="bold" fill="#00FF41" text-anchor="middle">VULNERABILITY TAXONOMY</text>
+
+  <!-- Root node -->
+  <rect x="170" y="55" width="160" height="38" fill="#1A1A1A" stroke="#00FF41" stroke-width="2" rx="3"/>
+  <text x="250" y="79" font-family="Courier New, monospace" font-size="13" font-weight="bold" fill="#00FF41" text-anchor="middle">Memory Corruption</text>
+
+  <!-- Branch lines -->
+  <line x1="250" y1="93" x2="100" y2="130" stroke="#444" stroke-width="1"/>
+  <line x1="250" y1="93" x2="250" y2="130" stroke="#444" stroke-width="1"/>
+  <line x1="250" y1="93" x2="400" y2="130" stroke="#444" stroke-width="1"/>
+
+  <!-- Category nodes -->
+  <rect x="20" y="130" width="160" height="35" fill="#1A2A1A" stroke="#00BFFF" stroke-width="1.5" rx="3"/>
+  <text x="100" y="152" font-family="Courier New, monospace" font-size="12" fill="#00BFFF" text-anchor="middle">Stack-based</text>
+
+  <rect x="170" y="130" width="160" height="35" fill="#2A1A1A" stroke="#FFA500" stroke-width="1.5" rx="3"/>
+  <text x="250" y="152" font-family="Courier New, monospace" font-size="12" fill="#FFA500" text-anchor="middle">Heap-based</text>
+
+  <rect x="320" y="130" width="160" height="35" fill="#1A1A2A" stroke="#8888FF" stroke-width="1.5" rx="3"/>
+  <text x="400" y="152" font-family="Courier New, monospace" font-size="12" fill="#8888FF" text-anchor="middle">Integer Issues</text>
+
+  <!-- Stack sub-items -->
+  <rect x="20" y="190" width="160" height="28" fill="#111" stroke="#00BFFF" stroke-width="1" rx="2"/>
+  <text x="100" y="209" font-family="Courier New, monospace" font-size="11" fill="#F0F0F0" text-anchor="middle">Buffer Overflow (CWE-121)</text>
+
+  <rect x="20" y="225" width="160" height="28" fill="#111" stroke="#00BFFF" stroke-width="1" rx="2"/>
+  <text x="100" y="244" font-family="Courier New, monospace" font-size="11" fill="#F0F0F0" text-anchor="middle">Stack UAF (CWE-416)</text>
+
+  <rect x="20" y="260" width="160" height="28" fill="#111" stroke="#00BFFF" stroke-width="1" rx="2"/>
+  <text x="100" y="279" font-family="Courier New, monospace" font-size="11" fill="#F0F0F0" text-anchor="middle">Format String (CWE-134)</text>
+
+  <!-- Heap sub-items -->
+  <rect x="170" y="190" width="160" height="28" fill="#111" stroke="#FFA500" stroke-width="1" rx="2"/>
+  <text x="250" y="209" font-family="Courier New, monospace" font-size="11" fill="#F0F0F0" text-anchor="middle">Heap Overflow (CWE-122)</text>
+
+  <rect x="170" y="225" width="160" height="28" fill="#111" stroke="#FFA500" stroke-width="1" rx="2"/>
+  <text x="250" y="244" font-family="Courier New, monospace" font-size="11" fill="#F0F0F0" text-anchor="middle">Use-After-Free (CWE-416)</text>
+
+  <rect x="170" y="260" width="160" height="28" fill="#111" stroke="#FFA500" stroke-width="1" rx="2"/>
+  <text x="250" y="279" font-family="Courier New, monospace" font-size="11" fill="#F0F0F0" text-anchor="middle">Double-Free (CWE-415)</text>
+
+  <!-- Integer sub-items -->
+  <rect x="320" y="190" width="160" height="28" fill="#111" stroke="#8888FF" stroke-width="1" rx="2"/>
+  <text x="400" y="209" font-family="Courier New, monospace" font-size="11" fill="#F0F0F0" text-anchor="middle">Overflow (CWE-190)</text>
+
+  <rect x="320" y="225" width="160" height="28" fill="#111" stroke="#8888FF" stroke-width="1" rx="2"/>
+  <text x="400" y="244" font-family="Courier New, monospace" font-size="11" fill="#F0F0F0" text-anchor="middle">Truncation (CWE-197)</text>
+
+  <rect x="320" y="260" width="160" height="28" fill="#111" stroke="#8888FF" stroke-width="1" rx="2"/>
+  <text x="400" y="279" font-family="Courier New, monospace" font-size="11" fill="#F0F0F0" text-anchor="middle">Sign Error (CWE-195)</text>
+
+  <text x="250" y="355" font-family="Courier New, monospace" font-size="11" fill="#00FF41" text-anchor="middle" opacity="0.6">NullByte Academy — M05: Vulnerability Classes</text>
+</svg>

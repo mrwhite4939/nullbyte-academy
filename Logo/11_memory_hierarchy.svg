@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="800" height="520">
+<rect width="800" height="520" fill="#070010"/>
+<text x="400" y="36" text-anchor="middle" font-family="monospace" font-size="17" font-weight="bold" fill="#00FFFF" letter-spacing="4">MEMORY HIERARCHY</text>
+<text x="400" y="57" text-anchor="middle" font-family="monospace" font-size="10" fill="#3A2060" letter-spacing="3">Speed vs capacity tradeoff  ·  NullByte Academy</text>
+
+<!-- Pyramid layers (wider = slower/bigger) -->
+<!-- L1: Registers -->
+<polygon points="400,68 460,106 340,106" fill="#1A0035" stroke="#BF5FFF" stroke-width="2"/>
+<text x="400" y="93" text-anchor="middle" font-family="monospace" font-size="9" fill="#BF5FFF">REGISTERS</text>
+
+<!-- L2: L1 Cache -->
+<polygon points="400,68 490,126 310,126" fill="none"/><rect x="322" y="108" width="156" height="22" rx="0" fill="#001A30" stroke="#00AACC" stroke-width="1.5"/>
+<text x="400" y="123" text-anchor="middle" font-family="monospace" font-size="9" fill="#00FFFF">L1 Cache  (32–64 KB)</text>
+
+<!-- L3: L2 Cache -->
+<rect x="280" y="132" width="240" height="22" rx="0" fill="#001525" stroke="#00AACC" stroke-width="1.5"/>
+<text x="400" y="147" text-anchor="middle" font-family="monospace" font-size="9" fill="#00AACC">L2 Cache  (256 KB – 1 MB)</text>
+
+<!-- L4: L3 Cache -->
+<rect x="238" y="156" width="324" height="22" rx="0" fill="#001020" stroke="#00AACC" stroke-width="1"/>
+<text x="400" y="171" text-anchor="middle" font-family="monospace" font-size="9" fill="#007888">L3 Cache  (4–64 MB, shared)</text>
+
+<!-- L5: RAM -->
+<rect x="176" y="180" width="448" height="26" rx="0" fill="#001A0D" stroke="#00FF88" stroke-width="1.5"/>
+<text x="400" y="197" text-anchor="middle" font-family="monospace" font-size="10" fill="#00FF88">RAM — Main Memory  (8 GB – 1+ TB)</text>
+
+<!-- L6: NVMe SSD -->
+<rect x="116" y="208" width="568" height="26" rx="0" fill="#1A0800" stroke="#FFB800" stroke-width="1.5"/>
+<text x="400" y="225" text-anchor="middle" font-family="monospace" font-size="10" fill="#FFB800">NVMe SSD  (up to 8+ GB/s — microseconds)</text>
+
+<!-- L7: HDD / Network -->
+<rect x="56" y="236" width="688" height="26" rx="0" fill="#1A0010" stroke="#FF4466" stroke-width="1.5"/>
+<text x="400" y="253" text-anchor="middle" font-family="monospace" font-size="10" fill="#FF4466">HDD / Network Storage  (milliseconds — gigabytes–petabytes)</text>
+
+<!-- Labels left: Speed -->
+<text x="24" y="90"  font-family="monospace" font-size="9" fill="#BF5FFF">fastest</text>
+<text x="24" y="245" font-family="monospace" font-size="9" fill="#FF4466">slowest</text>
+<line x1="38" y1="96" x2="38" y2="248" stroke="#2A1060" stroke-width="1"/>
+<polygon points="38,96 33,104 43,104" fill="#BF5FFF"/>
+<polygon points="38,248 33,240 43,240" fill="#FF4466"/>
+
+<!-- Labels right: Size -->
+<text x="762" y="90"  font-family="monospace" font-size="9" fill="#BF5FFF">smallest</text>
+<text x="762" y="245" font-family="monospace" font-size="9" fill="#FF4466">largest</text>
+<line x1="758" y1="96" x2="758" y2="248" stroke="#2A1060" stroke-width="1"/>
+<polygon points="758,96 753,104 763,104" fill="#FF4466"/>
+<polygon points="758,248 753,240 763,240" fill="#BF5FFF"/>
+
+<!-- Speed reference table -->
+<rect x="30" y="278" width="740" height="230" rx="6" fill="#0A0018" stroke="#1A0040"/>
+<text x="400" y="298" text-anchor="middle" font-family="monospace" font-size="10" fill="#4A20A0" letter-spacing="3">ACCESS LATENCY REFERENCE</text>
+<line x1="40" y1="306" x2="760" y2="306" stroke="#1A0040"/>
+
+<g font-family="monospace" font-size="10">
+<text x="55"  y="326" fill="#BF5FFF" font-weight="bold">Registers    </text><text x="185" y="326" fill="#BF5FFF">~0.3 ns    </text><text x="300" y="326" fill="#6070A0">~1 clock cycle at 3 GHz. The only storage the CPU operates on directly.</text>
+<text x="55"  y="348" fill="#00FFFF" font-weight="bold">L1 Cache     </text><text x="185" y="348" fill="#00FFFF">~1 ns      </text><text x="300" y="348" fill="#6070A0">4 clock cycles. Per-core. Instruction + data cache (Harvard model).</text>
+<text x="55"  y="370" fill="#00AACC" font-weight="bold">L2 Cache     </text><text x="185" y="370" fill="#00AACC">~4 ns      </text><text x="300" y="370" fill="#6070A0">~12 cycles. Per-core. Unified (instruction + data).</text>
+<text x="55"  y="392" fill="#007888" font-weight="bold">L3 Cache     </text><text x="185" y="392" fill="#007888">~12 ns     </text><text x="300" y="392" fill="#6070A0">~36 cycles. Shared across all cores. Last line of defense before RAM.</text>
+<text x="55"  y="414" fill="#00FF88" font-weight="bold">RAM          </text><text x="185" y="414" fill="#00FF88">~80 ns     </text><text x="300" y="414" fill="#6070A0">~240 cycles. DRAM — capacitor-based. Stack, heap, code all live here.</text>
+<text x="55"  y="436" fill="#FFB800" font-weight="bold">NVMe SSD     </text><text x="185" y="436" fill="#FFB800">~100 µs    </text><text x="300" y="436" fill="#6070A0">~300,000 cycles. Fast flash storage. OS pages RAM to/from here.</text>
+<text x="55"  y="458" fill="#FF4466" font-weight="bold">HDD          </text><text x="185" y="458" fill="#FF4466">~10 ms     </text><text x="300" y="458" fill="#6070A0">30 million cycles. Mechanical — seek time dominates.</text>
+<text x="55"  y="490" fill="#4A20A0">Security note:</text><text x="170" y="490" fill="#3A3060">Cache timing differences are exploitable — Spectre/Meltdown read secret data by measuring cache miss vs hit latency.</text>
+</g>
+</svg>

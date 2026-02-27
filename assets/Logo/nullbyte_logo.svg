@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#0D0D0D"/>
+  <!-- Hexagon outline -->
+  <polygon points="100,15 175,57 175,143 100,185 25,143 25,57" fill="none" stroke="#00FF41" stroke-width="2.5"/>
+  <!-- Inner hexagon -->
+  <polygon points="100,35 155,67 155,133 100,165 45,133 45,67" fill="none" stroke="#00FF41" stroke-width="1" opacity="0.3"/>
+  <!-- NB monogram -->
+  <text x="100" y="115" font-family="Courier New, monospace" font-size="54" font-weight="bold" fill="#00FF41" text-anchor="middle">NB</text>
+  <!-- Dot accent -->
+  <circle cx="100" cy="150" r="4" fill="#FFA500"/>
+</svg>

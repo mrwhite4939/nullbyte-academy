@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 440" width="860" height="440">
+<rect width="860" height="440" fill="#070010"/>
+<text x="430" y="36" text-anchor="middle" font-family="monospace" font-size="17" font-weight="bold" fill="#00FFFF" letter-spacing="4">FETCH — DECODE — EXECUTE CYCLE</text>
+<text x="430" y="57" text-anchor="middle" font-family="monospace" font-size="10" fill="#3A2060" letter-spacing="3">x86-64 Instruction Pipeline  ·  NullByte Academy</text>
+
+<!-- FETCH box -->
+<rect x="30" y="82" width="200" height="190" rx="8" fill="#0D0022" stroke="#BF5FFF" stroke-width="2.5"/>
+<rect x="30" y="82" width="200" height="36" rx="8" fill="#1A0035" stroke="#BF5FFF" stroke-width="2.5"/>
+<text x="130" y="106" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#BF5FFF" letter-spacing="3">FETCH</text>
+<text x="130" y="140" text-anchor="middle" font-family="monospace" font-size="11" fill="#C8D4E8">RIP → Memory Bus</text>
+<text x="130" y="160" text-anchor="middle" font-family="monospace" font-size="11" fill="#C8D4E8">Load 1–15 bytes</text>
+<text x="130" y="180" text-anchor="middle" font-family="monospace" font-size="11" fill="#C8D4E8">into Prefetch</text>
+<text x="130" y="200" text-anchor="middle" font-family="monospace" font-size="11" fill="#C8D4E8">Buffer</text>
+<text x="130" y="230" text-anchor="middle" font-family="monospace" font-size="10" fill="#5A3080">RIP auto-increments</text>
+<text x="130" y="248" text-anchor="middle" font-family="monospace" font-size="10" fill="#5A3080">after each fetch</text>
+
+<!-- Arrow FETCH → DECODE -->
+<defs>
+  <marker id="a1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0,10 3.5,0 7" fill="#6A30A0"/>
+  </marker>
+  <marker id="a2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0,10 3.5,0 7" fill="#6A30A0"/>
+  </marker>
+  <marker id="a3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0,10 3.5,0 7" fill="#6A30A0"/>
+  </marker>
+</defs>
+<line x1="232" y1="177" x2="298" y2="177" stroke="#6A30A0" stroke-width="2.5" marker-end="url(#a1)"/>
+<text x="265" y="168" text-anchor="middle" font-family="monospace" font-size="9" fill="#3A1060">raw bytes</text>
+
+<!-- DECODE box -->
+<rect x="300" y="82" width="200" height="190" rx="8" fill="#001022" stroke="#00AACC" stroke-width="2.5"/>
+<rect x="300" y="82" width="200" height="36" rx="8" fill="#001830" stroke="#00AACC" stroke-width="2.5"/>
+<text x="400" y="106" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#00FFFF" letter-spacing="3">DECODE</text>
+<text x="400" y="140" text-anchor="middle" font-family="monospace" font-size="11" fill="#C8D4E8">Parse prefix bytes</text>
+<text x="400" y="160" text-anchor="middle" font-family="monospace" font-size="11" fill="#C8D4E8">Identify opcode</text>
+<text x="400" y="180" text-anchor="middle" font-family="monospace" font-size="11" fill="#C8D4E8">Read ModR/M, SIB</text>
+<text x="400" y="200" text-anchor="middle" font-family="monospace" font-size="11" fill="#C8D4E8">displacement &amp; imm</text>
+<text x="400" y="230" text-anchor="middle" font-family="monospace" font-size="10" fill="#204060">Identify source /</text>
+<text x="400" y="248" text-anchor="middle" font-family="monospace" font-size="10" fill="#204060">destination operands</text>
+
+<!-- Arrow DECODE → EXECUTE -->
+<line x1="502" y1="177" x2="568" y2="177" stroke="#6A30A0" stroke-width="2.5" marker-end="url(#a2)"/>
+<text x="535" y="168" text-anchor="middle" font-family="monospace" font-size="9" fill="#3A1060">µops</text>
+
+<!-- EXECUTE box -->
+<rect x="570" y="82" width="200" height="190" rx="8" fill="#001A0D" stroke="#00FF88" stroke-width="2.5"/>
+<rect x="570" y="82" width="200" height="36" rx="8" fill="#002018" stroke="#00FF88" stroke-width="2.5"/>
+<text x="670" y="106" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#00FF88" letter-spacing="3">EXECUTE</text>
+<text x="670" y="140" text-anchor="middle" font-family="monospace" font-size="11" fill="#C8D4E8">ALU computes result</text>
+<text x="670" y="160" text-anchor="middle" font-family="monospace" font-size="11" fill="#C8D4E8">Memory read / write</text>
+<text x="670" y="180" text-anchor="middle" font-family="monospace" font-size="11" fill="#C8D4E8">Write-back to regs</text>
+<text x="670" y="200" text-anchor="middle" font-family="monospace" font-size="11" fill="#C8D4E8">Update RFLAGS</text>
+<text x="670" y="230" text-anchor="middle" font-family="monospace" font-size="10" fill="#005030">Branch: update RIP</text>
+<text x="670" y="248" text-anchor="middle" font-family="monospace" font-size="10" fill="#005030">on taken branches</text>
+
+<!-- Feedback loop -->
+<path d="M 670 274 L 670 330 L 130 330 L 130 274" stroke="#2A1060" stroke-width="1.5" fill="none" stroke-dasharray="6,4"/>
+<polygon points="130,272 124,284 136,284" fill="#2A1060"/>
+<text x="400" y="348" text-anchor="middle" font-family="monospace" font-size="10" fill="#2A1060">Next instruction cycle — repeat until HALT or exception</text>
+
+<!-- RIP detail box -->
+<rect x="30" y="358" width="800" height="70" rx="6" fill="#0A0018" stroke="#1A0040"/>
+<text x="430" y="376" text-anchor="middle" font-family="monospace" font-size="9" fill="#4A20A0" letter-spacing="2">KEY REGISTERS IN THIS CYCLE</text>
+<text x="50" y="396" font-family="monospace" font-size="10" fill="#BF5FFF">RIP</text>
+<text x="80" y="396" font-family="monospace" font-size="10" fill="#6070A0">Instruction Pointer — address of next instruction to fetch</text>
+<text x="50" y="413" font-family="monospace" font-size="10" fill="#00FFFF">RFLAGS</text>
+<text x="110" y="413" font-family="monospace" font-size="10" fill="#6070A0">Status flags updated after ALU: ZF, SF, CF, OF, PF, AF</text>
+<text x="420" y="396" font-family="monospace" font-size="10" fill="#00FF88">RAX–R15</text>
+<text x="480" y="396" font-family="monospace" font-size="10" fill="#6070A0">General-purpose registers, read and written during execute</text>
+<text x="420" y="413" font-family="monospace" font-size="10" fill="#FFB800">RSP</text>
+<text x="450" y="413" font-family="monospace" font-size="10" fill="#6070A0">Stack Pointer — modified by PUSH, POP, CALL, RET instructions</text>
+</svg>

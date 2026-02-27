@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 300" width="860" height="300">
+<defs>
+  <radialGradient id="bg" cx="40%" cy="50%" r="65%">
+    <stop offset="0%"   stop-color="#0D0022"/>
+    <stop offset="100%" stop-color="#070010"/>
+  </radialGradient>
+  <filter id="glo">
+    <feGaussianBlur stdDeviation="4" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="glo2">
+    <feGaussianBlur stdDeviation="2" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+
+<rect width="860" height="300" fill="url(#bg)"/>
+
+<!-- Circuit trace decorations -->
+<path d="M 20 20 L 100 20 L 100 50 L 120 50" stroke="#1A0040" stroke-width="1" fill="none"/>
+<circle cx="120" cy="50" r="3" fill="#2A1060"/>
+<path d="M 840 20 L 760 20 L 760 50 L 740 50" stroke="#1A0040" stroke-width="1" fill="none"/>
+<circle cx="740" cy="50" r="3" fill="#2A1060"/>
+<path d="M 20 280 L 100 280 L 100 250 L 120 250" stroke="#1A0040" stroke-width="1" fill="none"/>
+<circle cx="120" cy="250" r="3" fill="#2A1060"/>
+<path d="M 840 280 L 760 280 L 760 250 L 740 250" stroke="#1A0040" stroke-width="1" fill="none"/>
+<circle cx="740" cy="250" r="3" fill="#2A1060"/>
+
+<!-- Scan line effect at top -->
+<rect x="0" y="0" width="860" height="2" fill="#00FFFF" opacity="0.08"/>
+<rect x="0" y="4" width="860" height="1" fill="#00FFFF" opacity="0.04"/>
+
+<!-- Hexagon emblem -->
+<polygon points="90,150 124,91 192,91 226,150 192,209 124,209"
+         fill="none" stroke="#00FFFF" stroke-width="2.5" filter="url(#glo)"/>
+<polygon points="90,150 124,91 192,91 226,150 210,177"
+         fill="none" stroke="#BF5FFF" stroke-width="1" stroke-dasharray="5,5"/>
+<text x="158" y="165" text-anchor="middle" font-family="monospace" font-size="52" font-weight="bold" fill="#00FFFF" filter="url(#glo)">λ</text>
+
+<!-- Wordmark -->
+<text x="262" y="134" font-family="monospace" font-size="38" font-weight="bold" fill="#FFFFFF" letter-spacing="3">NULLBYTE</text>
+<text x="262" y="178" font-family="monospace" font-size="38" font-weight="bold" fill="#00FFFF" letter-spacing="3" filter="url(#glo2)">ACADEMY</text>
+
+<!-- Divider -->
+<line x1="262" y1="196" x2="820" y2="196" stroke="#1A0040" stroke-width="1"/>
+
+<!-- Tagline -->
+<text x="262" y="218" font-family="monospace" font-size="11" fill="#4A20A0" letter-spacing="3">OFFENSIVE THINKING.  DEFENSIVE ARCHITECTURE.</text>
+
+<!-- Sub-tagline -->
+<text x="262" y="246" font-family="monospace" font-size="10" fill="#2A1060" letter-spacing="2">TOOLS ARE SECONDARY  ·  MENTAL MODELING IS PRIMARY</text>
+<text x="262" y="263" font-family="monospace" font-size="10" fill="#2A1060" letter-spacing="2">BYTE-LEVEL REASONING IS MANDATORY</text>
+
+<!-- Version / contact -->
+<text x="262" y="288" font-family="monospace" font-size="9" fill="#1A0040" letter-spacing="1">v2.0  ·  For educational and research use only  ·  All content original</text>
+
+<!-- Glow dots -->
+<circle cx="90" cy="150" r="4" fill="#00FFFF" opacity="0.6" filter="url(#glo2)"/>
+<circle cx="158" cy="91" r="3" fill="#BF5FFF" opacity="0.5"/>
+<circle cx="226" cy="150" r="3" fill="#00FF88" opacity="0.5" filter="url(#glo2)"/>
+</svg>

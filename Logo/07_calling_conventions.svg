@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" width="860" height="480">
+<rect width="860" height="480" fill="#070010"/>
+<text x="430" y="36" text-anchor="middle" font-family="monospace" font-size="17" font-weight="bold" fill="#00FFFF" letter-spacing="4">CALLING CONVENTIONS — SYSTEM V vs WINDOWS x64</text>
+<text x="430" y="57" text-anchor="middle" font-family="monospace" font-size="10" fill="#3A2060" letter-spacing="3">ABI differences are the #1 source of cross-platform bugs  ·  NullByte Academy</text>
+
+<!-- Column headers -->
+<rect x="18"  y="68" width="260" height="28" rx="3" fill="#0D0022" stroke="#2A1060"/>
+<text x="148" y="87" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#5A4080">PROPERTY</text>
+<rect x="284" y="68" width="260" height="28" rx="3" fill="#001A0D" stroke="#00FF88"/>
+<text x="414" y="87" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#00FF88">System V AMD64  (Linux)</text>
+<rect x="550" y="68" width="292" height="28" rx="3" fill="#001025" stroke="#00AACC"/>
+<text x="696" y="87" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="#00FFFF">Windows x64</text>
+
+<g font-family="monospace" font-size="10">
+<!-- Integer args row -->
+<rect x="18"  y="100" width="260" height="40" rx="2" fill="#0D0020" stroke="#1A0040"/><text x="148" y="124" text-anchor="middle" fill="#C8D4E8">Integer / pointer args</text>
+<rect x="284" y="100" width="260" height="40" rx="2" fill="#001A0D" stroke="#1A4030"/><text x="414" y="118" text-anchor="middle" fill="#00FF88">RDI, RSI, RDX, RCX,</text><text x="414" y="133" text-anchor="middle" fill="#00AA66">R8, R9  (then stack)</text>
+<rect x="550" y="100" width="292" height="40" rx="2" fill="#001025" stroke="#1A3040"/><text x="696" y="118" text-anchor="middle" fill="#00FFFF">RCX, RDX, R8, R9</text><text x="696" y="133" text-anchor="middle" fill="#007888">(4 registers only, then stack)</text>
+
+<!-- Float args -->
+<rect x="18"  y="144" width="260" height="28" rx="2" fill="#110020" stroke="#1A0040"/><text x="148" y="162" text-anchor="middle" fill="#C8D4E8">Float / double args</text>
+<rect x="284" y="144" width="260" height="28" rx="2" fill="#001030" stroke="#1A4030"/><text x="414" y="162" text-anchor="middle" fill="#00CC88">XMM0–XMM7  (8 regs)</text>
+<rect x="550" y="144" width="292" height="28" rx="2" fill="#001020" stroke="#1A3040"/><text x="696" y="162" text-anchor="middle" fill="#00AACC">XMM0–XMM3  (4 regs)</text>
+
+<!-- Return -->
+<rect x="18"  y="176" width="260" height="28" rx="2" fill="#0D0020" stroke="#1A0040"/><text x="148" y="194" text-anchor="middle" fill="#C8D4E8">Return value</text>
+<rect x="284" y="176" width="260" height="28" rx="2" fill="#001A0D" stroke="#1A4030"/><text x="414" y="194" text-anchor="middle" fill="#00FF88">RAX  (RDX:RAX for 128-bit)</text>
+<rect x="550" y="176" width="292" height="28" rx="2" fill="#001025" stroke="#1A3040"/><text x="696" y="194" text-anchor="middle" fill="#00FFFF">RAX  (same)</text>
+
+<!-- Shadow space — HIGHLIGHTED -->
+<rect x="18"  y="208" width="260" height="28" rx="2" fill="#1A0A00" stroke="#FF8800"/><text x="148" y="226" text-anchor="middle" fill="#FFB800">Shadow / home space  ⚠</text>
+<rect x="284" y="208" width="260" height="28" rx="2" fill="#001A0D" stroke="#1A4030"/><text x="414" y="226" text-anchor="middle" fill="#00FF88">NONE</text>
+<rect x="550" y="208" width="292" height="28" rx="2" fill="#100A00" stroke="#FF8800"/><text x="696" y="226" text-anchor="middle" fill="#FFB800">32 bytes mandatory (caller allocates)</text>
+
+<!-- Callee-saved -->
+<rect x="18"  y="240" width="260" height="40" rx="2" fill="#0D0020" stroke="#1A0040"/><text x="148" y="264" text-anchor="middle" fill="#C8D4E8">Callee-saved regs</text>
+<rect x="284" y="240" width="260" height="40" rx="2" fill="#001A0D" stroke="#1A4030"/><text x="414" y="256" text-anchor="middle" fill="#00FF88">RBX, RBP, R12, R13,</text><text x="414" y="271" text-anchor="middle" fill="#00AA66">R14, R15  (+ RSP implicit)</text>
+<rect x="550" y="240" width="292" height="40" rx="2" fill="#001025" stroke="#1A3040"/><text x="696" y="256" text-anchor="middle" fill="#00FFFF">RBX, RBP, RDI, RSI,</text><text x="696" y="271" text-anchor="middle" fill="#007888">R12–R15, XMM6–XMM15</text>
+
+<!-- Red zone -->
+<rect x="18"  y="284" width="260" height="28" rx="2" fill="#1A0A00" stroke="#FF8800"/><text x="148" y="302" text-anchor="middle" fill="#FFB800">Red zone  ⚠</text>
+<rect x="284" y="284" width="260" height="28" rx="2" fill="#100500" stroke="#FF8800"/><text x="414" y="302" text-anchor="middle" fill="#FFB800">128 bytes below RSP (user only)</text>
+<rect x="550" y="284" width="292" height="28" rx="2" fill="#001025" stroke="#1A3040"/><text x="696" y="302" text-anchor="middle" fill="#00FFFF">NONE</text>
+
+<!-- Stack cleanup -->
+<rect x="18"  y="316" width="260" height="28" rx="2" fill="#0D0020" stroke="#1A0040"/><text x="148" y="334" text-anchor="middle" fill="#C8D4E8">Stack cleanup</text>
+<rect x="284" y="316" width="260" height="28" rx="2" fill="#001A0D" stroke="#1A4030"/><text x="414" y="334" text-anchor="middle" fill="#00FF88">Caller cleans up</text>
+<rect x="550" y="316" width="292" height="28" rx="2" fill="#001025" stroke="#1A3040"/><text x="696" y="334" text-anchor="middle" fill="#00FFFF">Caller cleans up</text>
+
+<!-- Stack align -->
+<rect x="18"  y="348" width="260" height="28" rx="2" fill="#1A0A00" stroke="#FF8800"/><text x="148" y="366" text-anchor="middle" fill="#FFB800">RSP before CALL  ⚠</text>
+<rect x="284" y="348" width="260" height="28" rx="2" fill="#100500" stroke="#FF8800"/><text x="414" y="366" text-anchor="middle" fill="#FFB800">Must be 16-byte aligned</text>
+<rect x="550" y="348" width="292" height="28" rx="2" fill="#100500" stroke="#FF8800"/><text x="696" y="366" text-anchor="middle" fill="#FFB800">Must be 16-byte aligned</text>
+</g>
+
+<!-- Notes -->
+<rect x="18" y="390" width="824" height="80" rx="5" fill="#0A0018" stroke="#1A0040"/>
+<text x="430" y="408" text-anchor="middle" font-family="monospace" font-size="9" fill="#4A20A0" letter-spacing="2">⚠ HIGHLIGHTED DIFFERENCES — CRITICAL FOR CROSS-PLATFORM WORK</text>
+<text x="30" y="426" font-family="monospace" font-size="9" fill="#4A3080">Shadow space: Windows callee must treat 32B above its own RSP as valid — used to home register args. No equivalent in System V.</text>
+<text x="30" y="442" font-family="monospace" font-size="9" fill="#4A3080">Red zone: SysV leaf functions may use 128B below RSP without adjusting it. Windows has no red zone — interrupt handlers clobber this area.</text>
+<text x="30" y="458" font-family="monospace" font-size="9" fill="#4A3080">Alignment: Both ABIs require 16-byte RSP alignment before a CALL. Misalignment causes SIGSEGV when callee uses MOVAPS/MOVDQA (SSE instructions).</text>
+</svg>

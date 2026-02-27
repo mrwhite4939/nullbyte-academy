@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NullByte Academy — Interactive Testing Lab</title>
+    <meta name="author" content="mrwhite4939@gmail.com" />
+    <meta name="description" content="Test your systems security knowledge. Interactive stack diagrams, CPU visualization, MCQ, and skill evaluation." />
+    <meta name="theme-color" content="#0A0010" />
+    <meta property="og:title" content="NullByte Academy — Testing Lab" />
+    <meta property="og:description" content="Offensive thinking. Defensive architecture. Test your skills." />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0010' rx='6'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='20' fill='%2300FFFF'%3E%CE%BB%3C/text%3E%3C/svg%3E" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :root {
+        --void:       #0A0010;
+        --deep:       #0D0020;
+        --surface:    #12002A;
+        --raised:     #1A0040;
+        --border:     #2A1060;
+        --border-hi:  #4A20A0;
+        --cyan:       #00FFFF;
+        --cyan-dim:   #00AACC;
+        --purple:     #BF5FFF;
+        --purple-dim: #7B3FCC;
+        --green:      #00FF88;
+        --amber:      #FFB800;
+        --red:        #FF4466;
+        --text:       #C8D4E8;
+        --muted:      #6070A0;
+        --white:      #FFFFFF;
+      }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        background-color: var(--void);
+        color: var(--text);
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      button { font-family: inherit; cursor: pointer; }
+
+      ::-webkit-scrollbar { width: 5px; height: 5px; }
+      ::-webkit-scrollbar-track { background: var(--void); }
+      ::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 3px; }
+      ::selection { background: #BF5FFF33; color: #fff; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="380" viewBox="0 0 500 380">
+  <rect width="500" height="380" fill="#0D0D0D"/>
+  <text x="250" y="35" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#00FF41" text-anchor="middle">EXPLOIT MITIGATIONS OVERVIEW</text>
+
+  <!-- Mitigation blocks -->
+  <!-- ASLR -->
+  <rect x="30" y="55" width="200" height="70" fill="#1A1A2A" stroke="#00BFFF" stroke-width="1.5" rx="4"/>
+  <text x="130" y="80" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#00BFFF" text-anchor="middle">ASLR</text>
+  <text x="130" y="98" font-family="Courier New, monospace" font-size="10" fill="#F0F0F0" text-anchor="middle">Randomizes base addresses</text>
+  <text x="130" y="114" font-family="Courier New, monospace" font-size="10" fill="#F0F0F0" text-anchor="middle">Stack / Heap / Libraries</text>
+
+  <!-- DEP/NX -->
+  <rect x="270" y="55" width="200" height="70" fill="#1A2A1A" stroke="#00FF41" stroke-width="1.5" rx="4"/>
+  <text x="370" y="80" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#00FF41" text-anchor="middle">DEP / NX</text>
+  <text x="370" y="98" font-family="Courier New, monospace" font-size="10" fill="#F0F0F0" text-anchor="middle">Non-executable memory pages</text>
+  <text x="370" y="114" font-family="Courier New, monospace" font-size="10" fill="#F0F0F0" text-anchor="middle">W^X enforcement</text>
+
+  <!-- Stack Canary -->
+  <rect x="30" y="145" width="200" height="70" fill="#2A1A1A" stroke="#FFA500" stroke-width="1.5" rx="4"/>
+  <text x="130" y="170" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#FFA500" text-anchor="middle">Stack Canary</text>
+  <text x="130" y="188" font-family="Courier New, monospace" font-size="10" fill="#F0F0F0" text-anchor="middle">Detects stack overflows</text>
+  <text x="130" y="204" font-family="Courier New, monospace" font-size="10" fill="#F0F0F0" text-anchor="middle">Verified pre-return</text>
+
+  <!-- CFI -->
+  <rect x="270" y="145" width="200" height="70" fill="#1A1A2A" stroke="#8888FF" stroke-width="1.5" rx="4"/>
+  <text x="370" y="170" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#8888FF" text-anchor="middle">CFI</text>
+  <text x="370" y="188" font-family="Courier New, monospace" font-size="10" fill="#F0F0F0" text-anchor="middle">Control Flow Integrity</text>
+  <text x="370" y="204" font-family="Courier New, monospace" font-size="10" fill="#F0F0F0" text-anchor="middle">Forward + backward edge</text>
+
+  <!-- RELRO -->
+  <rect x="30" y="235" width="200" height="70" fill="#1A2A2A" stroke="#00FF88" stroke-width="1.5" rx="4"/>
+  <text x="130" y="260" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#00FF88" text-anchor="middle">RELRO</text>
+  <text x="130" y="278" font-family="Courier New, monospace" font-size="10" fill="#F0F0F0" text-anchor="middle">Read-only relocations</text>
+  <text x="130" y="294" font-family="Courier New, monospace" font-size="10" fill="#F0F0F0" text-anchor="middle">GOT protection</text>
+
+  <!-- Shadow Stack -->
+  <rect x="270" y="235" width="200" height="70" fill="#2A1A2A" stroke="#FF88FF" stroke-width="1.5" rx="4"/>
+  <text x="370" y="260" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#FF88FF" text-anchor="middle">Shadow Stack</text>
+  <text x="370" y="278" font-family="Courier New, monospace" font-size="10" fill="#F0F0F0" text-anchor="middle">Hardware return addr copy</text>
+  <text x="370" y="294" font-family="Courier New, monospace" font-size="10" fill="#F0F0F0" text-anchor="middle">CET / Intel SHSTK</text>
+
+  <text x="250" y="355" font-family="Courier New, monospace" font-size="11" fill="#00FF41" text-anchor="middle" opacity="0.6">NullByte Academy — M03: Exploit Mitigations</text>
+</svg>

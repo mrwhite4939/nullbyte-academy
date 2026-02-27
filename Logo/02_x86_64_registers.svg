@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" width="860" height="560">
+<rect width="860" height="560" fill="#070010"/>
+<text x="430" y="36" text-anchor="middle" font-family="monospace" font-size="17" font-weight="bold" fill="#00FFFF" letter-spacing="4">x86-64 REGISTER ARCHITECTURE</text>
+<text x="430" y="57" text-anchor="middle" font-family="monospace" font-size="10" fill="#3A2060" letter-spacing="3">Width aliasing: 64-bit / 32-bit / 16-bit / 8-bit  ·  NullByte Academy</text>
+
+<!-- Column headers -->
+<rect x="20" y="68" width="820" height="26" rx="3" fill="#0D0022" stroke="#2A1060"/>
+<text x="90"  y="85" text-anchor="middle" font-family="monospace" font-size="10" fill="#BF5FFF" font-weight="bold">64-BIT</text>
+<text x="200" y="85" text-anchor="middle" font-family="monospace" font-size="10" fill="#00FFFF" font-weight="bold">32-BIT</text>
+<text x="295" y="85" text-anchor="middle" font-family="monospace" font-size="10" fill="#00FF88" font-weight="bold">16-BIT</text>
+<text x="380" y="85" text-anchor="middle" font-family="monospace" font-size="10" fill="#FFB800" font-weight="bold">8-LO</text>
+<text x="445" y="85" text-anchor="middle" font-family="monospace" font-size="10" fill="#FF6B6B" font-weight="bold">8-HI</text>
+<text x="580" y="85" text-anchor="middle" font-family="monospace" font-size="10" fill="#C8D4E8" font-weight="bold">ROLE  (System V AMD64)</text>
+<text x="760" y="85" text-anchor="middle" font-family="monospace" font-size="10" fill="#C8D4E8" font-weight="bold">SAVED?</text>
+
+<!-- Row data: [64, 32, 16, 8lo, 8hi, role, saved, rowbg, namecol] -->
+<g font-family="monospace" font-size="11">
+  <!-- RAX -->
+  <rect x="20" y="96"  width="820" height="24" rx="2" fill="#0D0020"/><text x="90"  y="112" text-anchor="middle" fill="#BF5FFF">RAX</text><text x="200" y="112" text-anchor="middle" fill="#7050AA">EAX</text><text x="295" y="112" text-anchor="middle" fill="#508060">AX</text><text x="380" y="112" text-anchor="middle" fill="#806030">AL</text><text x="445" y="112" text-anchor="middle" fill="#604020">AH</text><text x="580" y="112" text-anchor="middle" fill="#AA6666">Return value · accumulator · syscall number</text><text x="760" y="112" text-anchor="middle" fill="#FF4466" font-size="10">Caller</text>
+  <!-- RBX -->
+  <rect x="20" y="122" width="820" height="24" rx="2" fill="#110020"/><text x="90"  y="138" text-anchor="middle" fill="#BF5FFF">RBX</text><text x="200" y="138" text-anchor="middle" fill="#7050AA">EBX</text><text x="295" y="138" text-anchor="middle" fill="#508060">BX</text><text x="380" y="138" text-anchor="middle" fill="#806030">BL</text><text x="445" y="138" text-anchor="middle" fill="#604020">BH</text><text x="580" y="138" text-anchor="middle" fill="#6070A0">General purpose</text><text x="760" y="138" text-anchor="middle" fill="#00FF88" font-size="10">Callee ✓</text>
+  <!-- RCX -->
+  <rect x="20" y="148" width="820" height="24" rx="2" fill="#0D0020"/><text x="90"  y="164" text-anchor="middle" fill="#BF5FFF">RCX</text><text x="200" y="164" text-anchor="middle" fill="#7050AA">ECX</text><text x="295" y="164" text-anchor="middle" fill="#508060">CX</text><text x="380" y="164" text-anchor="middle" fill="#806030">CL</text><text x="445" y="164" text-anchor="middle" fill="#604020">CH</text><text x="580" y="164" text-anchor="middle" fill="#AA6666">4th integer argument</text><text x="760" y="164" text-anchor="middle" fill="#FF4466" font-size="10">Caller</text>
+  <!-- RDX -->
+  <rect x="20" y="174" width="820" height="24" rx="2" fill="#110020"/><text x="90"  y="190" text-anchor="middle" fill="#BF5FFF">RDX</text><text x="200" y="190" text-anchor="middle" fill="#7050AA">EDX</text><text x="295" y="190" text-anchor="middle" fill="#508060">DX</text><text x="380" y="190" text-anchor="middle" fill="#806030">DL</text><text x="445" y="190" text-anchor="middle" fill="#604020">DH</text><text x="580" y="190" text-anchor="middle" fill="#AA6666">3rd arg · high half of 128-bit return (RDX:RAX)</text><text x="760" y="190" text-anchor="middle" fill="#FF4466" font-size="10">Caller</text>
+  <!-- RSI -->
+  <rect x="20" y="200" width="820" height="24" rx="2" fill="#0D0020"/><text x="90"  y="216" text-anchor="middle" fill="#BF5FFF">RSI</text><text x="200" y="216" text-anchor="middle" fill="#7050AA">ESI</text><text x="295" y="216" text-anchor="middle" fill="#508060">SI</text><text x="380" y="216" text-anchor="middle" fill="#806030">SIL</text><text x="445" y="216" text-anchor="middle" fill="#3A2060">—</text><text x="580" y="216" text-anchor="middle" fill="#AA6666">2nd integer argument</text><text x="760" y="216" text-anchor="middle" fill="#FF4466" font-size="10">Caller</text>
+  <!-- RDI -->
+  <rect x="20" y="226" width="820" height="24" rx="2" fill="#110020"/><text x="90"  y="242" text-anchor="middle" fill="#BF5FFF">RDI</text><text x="200" y="242" text-anchor="middle" fill="#7050AA">EDI</text><text x="295" y="242" text-anchor="middle" fill="#508060">DI</text><text x="380" y="242" text-anchor="middle" fill="#806030">DIL</text><text x="445" y="242" text-anchor="middle" fill="#3A2060">—</text><text x="580" y="242" text-anchor="middle" fill="#AA6666">1st integer argument  (most common)</text><text x="760" y="242" text-anchor="middle" fill="#FF4466" font-size="10">Caller</text>
+  <!-- RSP -->
+  <rect x="20" y="252" width="820" height="24" rx="2" fill="#001525" stroke="#00AACC" stroke-width="1"/><text x="90"  y="268" text-anchor="middle" fill="#00FFFF">RSP</text><text x="200" y="268" text-anchor="middle" fill="#007888">ESP</text><text x="295" y="268" text-anchor="middle" fill="#005565">SP</text><text x="380" y="268" text-anchor="middle" fill="#003545">SPL</text><text x="445" y="268" text-anchor="middle" fill="#3A2060">—</text><text x="580" y="268" text-anchor="middle" fill="#00AACC">Stack Pointer — always points to top-of-stack</text><text x="760" y="268" text-anchor="middle" fill="#00FF88" font-size="10">Callee ✓</text>
+  <!-- RBP -->
+  <rect x="20" y="278" width="820" height="24" rx="2" fill="#001020" stroke="#00AACC" stroke-width="1"/><text x="90"  y="294" text-anchor="middle" fill="#00FFFF">RBP</text><text x="200" y="294" text-anchor="middle" fill="#007888">EBP</text><text x="295" y="294" text-anchor="middle" fill="#005565">BP</text><text x="380" y="294" text-anchor="middle" fill="#003545">BPL</text><text x="445" y="294" text-anchor="middle" fill="#3A2060">—</text><text x="580" y="294" text-anchor="middle" fill="#00AACC">Frame Base Pointer — anchors the current stack frame</text><text x="760" y="294" text-anchor="middle" fill="#00FF88" font-size="10">Callee ✓</text>
+  <!-- RIP -->
+  <rect x="20" y="304" width="820" height="24" rx="2" fill="#1A0025" stroke="#BF5FFF" stroke-width="1"/><text x="90"  y="320" text-anchor="middle" fill="#DF8FFF">RIP</text><text x="200" y="320" text-anchor="middle" fill="#9060BB">EIP</text><text x="295" y="320" text-anchor="middle" fill="#604090">IP</text><text x="380" y="320" text-anchor="middle" fill="#3A2060">—</text><text x="445" y="320" text-anchor="middle" fill="#3A2060">—</text><text x="580" y="320" text-anchor="middle" fill="#DF8FFF">Instruction Pointer — next instruction address  ★</text><text x="760" y="320" text-anchor="middle" fill="#DF8FFF" font-size="10">Implicit</text>
+  <!-- R8-R9 -->
+  <rect x="20" y="330" width="820" height="24" rx="2" fill="#0D0020"/><text x="90"  y="346" text-anchor="middle" fill="#BF5FFF">R8–R9</text><text x="200" y="346" text-anchor="middle" fill="#7050AA">R8D–R9D</text><text x="295" y="346" text-anchor="middle" fill="#508060">R8W–R9W</text><text x="380" y="346" text-anchor="middle" fill="#806030">R8B–R9B</text><text x="445" y="346" text-anchor="middle" fill="#3A2060">—</text><text x="580" y="346" text-anchor="middle" fill="#AA6666">5th and 6th integer arguments</text><text x="760" y="346" text-anchor="middle" fill="#FF4466" font-size="10">Caller</text>
+  <!-- R10-R11 -->
+  <rect x="20" y="356" width="820" height="24" rx="2" fill="#110020"/><text x="90"  y="372" text-anchor="middle" fill="#BF5FFF">R10–R11</text><text x="200" y="372" text-anchor="middle" fill="#7050AA">R10D–</text><text x="295" y="372" text-anchor="middle" fill="#508060">R10W–</text><text x="380" y="372" text-anchor="middle" fill="#806030">R10B–</text><text x="445" y="372" text-anchor="middle" fill="#3A2060">—</text><text x="580" y="372" text-anchor="middle" fill="#AA6666">Temporary / syscall entry mask (R10 = RCX in kernel)</text><text x="760" y="372" text-anchor="middle" fill="#FF4466" font-size="10">Caller</text>
+  <!-- R12-R15 -->
+  <rect x="20" y="382" width="820" height="24" rx="2" fill="#001A0D" stroke="#00CC66" stroke-width="1"/><text x="90"  y="398" text-anchor="middle" fill="#00CC88">R12–R15</text><text x="200" y="398" text-anchor="middle" fill="#006030">R12D–</text><text x="295" y="398" text-anchor="middle" fill="#004020">R12W–</text><text x="380" y="398" text-anchor="middle" fill="#002818">R12B–</text><text x="445" y="398" text-anchor="middle" fill="#3A2060">—</text><text x="580" y="398" text-anchor="middle" fill="#00CC88">General purpose — callee must preserve these</text><text x="760" y="398" text-anchor="middle" fill="#00FF88" font-size="10">Callee ✓</text>
+</g>
+
+<!-- Width diagram -->
+<rect x="20" y="418" width="820" height="130" rx="6" fill="#0A0018" stroke="#1A0040"/>
+<text x="430" y="438" text-anchor="middle" font-family="monospace" font-size="10" fill="#4A20A0" letter-spacing="3">REGISTER WIDTH ALIASING  (example: RAX)</text>
+<!-- 64-bit -->
+<rect x="40"  y="448" width="780" height="20" rx="3" fill="#1A0035" stroke="#BF5FFF" stroke-width="1.5"/>
+<text x="430" y="462" text-anchor="middle" font-family="monospace" font-size="11" fill="#BF5FFF">RAX  bits [63 : 0]  —  64 bits wide</text>
+<!-- 32-bit -->
+<rect x="430" y="472" width="390" height="18" rx="3" fill="#0D0025" stroke="#00AACC" stroke-width="1.5"/>
+<text x="625" y="485" text-anchor="middle" font-family="monospace" font-size="10" fill="#00FFFF">EAX  [31:0]  →  ZERO-EXTENDS to RAX on write</text>
+<!-- 16-bit -->
+<rect x="625" y="494" width="195" height="16" rx="2" fill="#08001A" stroke="#00FF88" stroke-width="1"/>
+<text x="723" y="506" text-anchor="middle" font-family="monospace" font-size="9" fill="#00FF88">AX  [15:0]</text>
+<!-- 8-bit lo -->
+<rect x="723" y="514" width="97" height="14" rx="2" fill="#060014" stroke="#FFB800" stroke-width="1"/>
+<text x="772" y="525" text-anchor="middle" font-family="monospace" font-size="9" fill="#FFB800">AL [7:0]</text>
+<!-- 8-bit hi -->
+<rect x="625" y="514" width="97" height="14" rx="2" fill="#060014" stroke="#FF6B6B" stroke-width="1"/>
+<text x="674" y="525" text-anchor="middle" font-family="monospace" font-size="9" fill="#FF6B6B">AH [15:8]</text>
+<text x="430" y="540" text-anchor="middle" font-family="monospace" font-size="9" fill="#3A2060">Note: 16-bit and 8-bit writes do NOT zero-extend — upper bits preserved. Only 32-bit writes zero-extend to 64.</text>
+</svg>

@@ -1,11 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// For GitHub Pages:
-// base must match the repository name
+// Vercel serves from the root '/', no subpath
 export default defineConfig({
   plugins: [react()],
-  base: '/nullbyte-academy/',
+  base: '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',

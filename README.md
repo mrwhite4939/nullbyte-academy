@@ -159,10 +159,10 @@ The NullByte Academy includes a **React-based interactive learning platform** fo
 
 ```bash
 # Clone the repository
-git clone https://github.com/nullbyte-academy/platform.git
+git clone https://github.com/mrwhite4939/nullbyte-academy
 
 # Navigate to the frontend
-cd platform/frontend
+cd Testing
 
 # Install dependencies
 npm install
@@ -335,6 +335,7 @@ NullByte-Academy/
 <p align="center">
   <em>© 2026 NullByte Academy — Built for those who need to know how it actually works.</em>
 </p>
+
 # Course-NullByte
 # Course-NullByte
 # Course-NullByte

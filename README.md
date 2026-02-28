@@ -335,7 +335,3 @@ NullByte-Academy/
 <p align="center">
   <em>© 2026 NullByte Academy — Built for those who need to know how it actually works.</em>
 </p>
-
-# Course-NullByte
-# Course-NullByte
-# Course-NullByte

@@ -328,7 +328,7 @@ NullByte-Academy/
 
 - **Security Issues:** See [SECURITY.md](SECURITY.md) for responsible disclosure process
 - **General Inquiries:** `mrwhite4939@gmail.com`
-- **GitHub:** [github.com/nullbyte-academy](https://github.com/nullbyte-academy)
+- **GitHub:** [mrwhite4939](github.com/mrwhite4939)
 
 ---
 

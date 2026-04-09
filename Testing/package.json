@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
-    "vite": "^5.4.1"
+    "vite": "^8.0.7"
   },
   "description": "NullByte Academy — Interactive testing app for cybersecurity curriculum",
   "author": "NullByte Academy <mrwhite4939@gmail.com>",
